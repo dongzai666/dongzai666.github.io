@@ -16,7 +16,7 @@
 <meta property="og:description" content="这是俺的第一个博客 俺认为新建一个博客网站还是挺容易的，接下来总结下主要步骤要点   安装nodejs ，利用里面的hexo框架可以搭建博客 通过hexo初始化我们的博客仓库，也就是生成一个文件夹 source&#x2F;_posts 文件夹下存放.md 格式的博客文章 themes 文件夹下存放主题 可以去github克隆喜欢的主题到该目录下，然后通过修改 _config.yaml 中 theme 字段为">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-30T03:14:50.000Z">
-<meta property="article:modified_time" content="2022-01-30T03:47:21.831Z">
+<meta property="article:modified_time" content="2022-01-30T04:42:46.045Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -197,6 +197,13 @@
 然后刷新配置三件套就可以了！</li>
 </ul>
 <hr>
+</li>
+<li>接下来就是将我们的网站挂载到github仓库上，这样任何人就能通过我们的网址来访问我们的网站了<ul>
+<li>首先创建名为<strong>xxx.github.io</strong>的github仓库，以后就可以通过 xxx.github.io 的网址来访问了</li>
+<li>通过如下命令来关联本地markdown文件与远端github仓库<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>打开配置文件_config.yml 配置git<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/xxx/xxxx.github.io.git</span><br></pre></td></tr></table></figure></li>
+<li>最后一步，将网站部署到github上去<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure></li>
+</ul>
 </li>
 </ol>
 
