@@ -154,106 +154,206 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-markdown_operate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vim-operate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="markdown-语言使用相当广泛，该文章主要记录其相关操作和一些实用经验，近期完成！"><a href="#markdown-语言使用相当广泛，该文章主要记录其相关操作和一些实用经验，近期完成！" class="headerlink" title="markdown 语言使用相当广泛，该文章主要记录其相关操作和一些实用经验，近期完成！"></a><strong>markdown</strong> 语言使用相当广泛，该文章主要记录其相关操作和一些实用经验，近期完成！</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/markdown_operate/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+      <header class="article-header">
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-practical_experience" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="该文章主要记录一些写代码过程中的实用经验和易踩坑"><a href="#该文章主要记录一些写代码过程中的实用经验和易踩坑" class="headerlink" title="该文章主要记录一些写代码过程中的实用经验和易踩坑"></a>该文章主要记录一些写代码过程中的实用经验和易踩坑</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/practical_experience/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/12/vim-operate/">vim_operate</a>
+    </h1>
   
-    <article id="post-python_tkinter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+        
+        <a href="/2022/02/12/vim-operate/" class="archive-article-date">
+  	<time datetime="2022-02-12T03:44:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>本文主要是介绍Vim的基本操作，不过当你能熟练使用这些操作以后，你的代码编写效率绝对会飞起，当然最后我也会介绍一些进阶读物，方便对VIm感兴趣的读者进一步了解。</p>
+</blockquote>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><blockquote>
+<p>写在前面：个人感觉 vscode + vim 绝配，yyds</p>
+</blockquote>
+<p>1.移动光标</p>
+<p><strong>检查键盘是否为英文输入，且大写未锁定</strong></p>
+<ul>
+<li>基本操作： h左 j下 k上 l右</li>
+<li>number+’w’ 将光标向前移动number个单词</li>
+<li>number+’e’ 功能同上</li>
+<li>数字0将光标移动到当前行首</li>
+</ul>
+<blockquote>
+<p>‘e’和’w’区别：</p>
+</blockquote>
+<ul>
+<li>‘w’ 将光标从当前位置移动到<strong>下一个单词起始</strong>，且不包括起始字符</li>
+<li>‘e’ 将光标从当前位置移动到<strong>当前单词末尾</strong></li>
+</ul>
+<p>个人感觉具体使用时区别不会太大。。</p>
+<p>2.Vim的保存和退出</p>
+<p><ESC>键可以切换Vim的状态，从编辑状态切换到<strong>正常状态</strong>，然后输入 </p>
+<ul>
+<li><code>:q!</code>不保存强制退出</li>
+<li><code>:wq</code>保存并退出</li>
+<li>通过 <code>vim + 文件名 + 回车</code>便可以通过vim打开对应文件</li>
+</ul>
+<p>3.文本编辑之删除</p>
+<blockquote>
+<p>该操作在normal模式下    </p>
+</blockquote>
+<ul>
+<li>通过 ‘x’来删除掉光标所在字符</li>
+<li>通过 ‘dd’ 来删除光标当前所在整行</li>
+<li>通过 ‘dw’ 从光标处删除到一个单词的词末</li>
+<li>通过 ‘d$’ 删除当前光标到行末</li>
+</ul>
+<h3 id="此处可以观察到-操作-操作对象-的使用规则，通过后面的计数操作，功能会更加强大，即-操作-number-操作对象"><a href="#此处可以观察到-操作-操作对象-的使用规则，通过后面的计数操作，功能会更加强大，即-操作-number-操作对象" class="headerlink" title="此处可以观察到 操作+操作对象  的使用规则，通过后面的计数操作，功能会更加强大，即 操作+number+操作对象"></a>此处可以观察到 操作+操作对象  的使用规则，通过后面的计数操作，功能会更加强大，即 操作+number+操作对象</h3><ul>
+<li>‘d3w’删除三行</li>
+<li>‘2dd’ 删除两行</li>
+<li>类比如上…</li>
+</ul>
+<p>4.文本编辑之插入</p>
+<blockquote>
+<p>以下操作均会进入<strong>编辑模式</strong></p>
+</blockquote>
+<ul>
+<li>通过 ‘i’在光标所在字母前面插入</li>
+<li>通过 ‘a’在光标所在字母后面插入</li>
+<li>通过 ‘A’在当前行的最后进行插入，此时光标在何位置并不重要</li>
+<li>通过小写 ‘o’在当前光标的下一行插入，此时Vim进入编辑模式</li>
+<li>通过大写 ‘O’在当前光标的上一行插入，此时VIm进入编辑模式  </li>
+</ul>
+<blockquote>
+<p>友情提示：<ESC>键除了能带你会normal模式外，还能撤销一个你不想输入或者部分完整的命令</p>
+</blockquote>
+<p>5.撤销类命令</p>
+<ul>
+<li>‘u’撤销最后执行的命令</li>
+<li>‘U’撤销对一行的操作</li>
+<li>撤销以前的撤销命令，则通过 Ctrl+R</li>
+</ul>
+<p>6.置入类命令</p>
+<ul>
+<li>‘p’可以配合删除命令来使用，该操作可以将已删除的文本内容置于光标之后。如果最后一次删除的是一个整行，那么该行将置于当前光标所在行的下一行。</li>
+</ul>
+<p>7.替换+更改类命令</p>
+<ul>
+<li><p>‘r’和一个字符可以替换当前光标所在位置的字符，<strong>该操作只能一个一个替换</strong></p>
+</li>
+<li><p>‘R’可以连续替换多个字符，通过＜ＥＳＣ＞结束</p>
+</li>
+<li><p>‘c’+对象 可以实现<strong>连续替换</strong>    </p>
+<ul>
+<li>ce 改变文本直到一个单词的末尾<blockquote>
+<p>同样也可以 ‘c’+number+motion 使用 </p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>查找替换：</p>
+<ol>
+<li>只在当前行查找替换：</li>
+</ol>
+<ul>
+<li>:s/old/new 该命令只替换当前行的第一个old</li>
+<li>:s/old/new/g 该命令对当前行内的所有old进行替换</li>
+<li>:s/old/new/gc 该命令对当前行内的所有old进行替换并询问，需要确认</li>
+</ul>
+<ol start="2">
+<li>在全文进行查找替换：<blockquote>
+<p>类比&lt;1&gt;，只需在’s’前加 ‘%’</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>:%s/old/new 只替换全文中的第一个old</li>
+<li>:%s/old/new/g 替换全文中的所有old</li>
+<li>:%s/old/new/gc 替换全文中的所有old并问询</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>8.定位及文件状态</p>
+<ul>
+<li>Ctrl+g 组合键可以查看当前光标所在行的行号及文件状态信息</li>
+<li>gg 可以跳转到第一行</li>
+<li>G 可以跳转到文件最后一行</li>
+<li>行号 + G 则可以跳转到指定行</li>
+</ul>
+<p>9.搜索类命令</p>
+<ul>
+<li>正向查找：输入 ‘/‘ (类似于’:’命令) ，然后输入 ’待查找字符串‘ ,回车即可    </li>
+<li>逆向查找：输入 ‘?’+’待查找字符串’,回车即可</li>
+<li>上面两种情况连续查找：<ul>
+<li>若连续同上次方向查找则输入’n’,即正向查找下’n’为向下搜索，逆向查找下为向上搜索</li>
+<li>若连续逆上次方向查找则输入’N’,即正向查找下’N’为向上搜索，逆向查找下为向下搜索<blockquote>
+<p>个人认为这两种用好一种就行了，容易混淆</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>10.配对括号的查找</p>
+<ul>
+<li>输入 ‘%’ 可以配对 ）、 ]、}</li>
+</ul>
+<hr>
+<ol start="11">
+<li>在Vim内执行外部命令</li>
+</ol>
+<ul>
+<li>‘:!’+外部命令 便可以在Vim中执行外部命令<ul>
+<li>例如 ‘:!ls’ 便可以查看当前vim文件同目录下的文件列表</li>
+</ul>
+</li>
+</ul>
+<ol start="12">
+<li>使用外部命令进行文件输出保存/读取写入</li>
+</ol>
+<ul>
+<li>‘v’命令可以使vim进入可视选取状态</li>
+<li>‘:w filname’可以将选中字段保存到 filename 文件中，可搭配 ‘v’命令使用</li>
+<li>‘:r filename’可以将外部filename中的内容写入到当前光标后面<ul>
+<li>例如 ‘:r !ls’ 可以将当前路径下的所有文件目录写入到光标后面</li>
+</ul>
+</li>
+</ul>
+<p>13.复制粘贴文本</p>
+<ul>
+<li>通过 ‘y’ 复制文本， ‘p’粘贴文本<blockquote>
+<p>可搭配 ‘v’命令使用 ，如同前面所说，单独使用 ‘p’命令将粘贴最后一次删除文本到当前光标所在下一行</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<p>14.设置类命令选项：</p>
+<ul>
+<li><p>输入 ‘:set xxx’ 可以设置xxx选项</p>
+<ul>
+<li>‘ic’ ‘ignorecase’    查找时忽略字母大小写</li>
+<li>‘is’ ‘incsearch’    查找短语时显示部分匹配</li>
+<li>‘hls’ ‘hlsearch’    高亮显示所有的匹配短语<blockquote>
+<p>选项名可以用完整版本，也可以用缩略版本。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>在选项前加上 no 可以关闭选项：  :set noic</p>
+</li>
+</ul>
+<p>15.关于组合键命令的小结</p>
+<ul>
+<li>ctrl + g 显示当前光标所在行号及文件状态</li>
+<li>ctrl + D / <TAB> 键进行自动补全</li>
+<li>ctrl + o 返回光标上次所在位置，可多次返回</li>
+</ul>
+
       
 
       
@@ -265,242 +365,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/python_tkinter/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-auto_python" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="由于近期对python使用较为广泛，尤其是对文件的自动化处理方面，每次都是零星的查找相关操作，比较繁琐费时，故该文系统记录python对文件的相关自动化操作"><a href="#由于近期对python使用较为广泛，尤其是对文件的自动化处理方面，每次都是零星的查找相关操作，比较繁琐费时，故该文系统记录python对文件的相关自动化操作" class="headerlink" title="由于近期对python使用较为广泛，尤其是对文件的自动化处理方面，每次都是零星的查找相关操作，比较繁琐费时，故该文系统记录python对文件的相关自动化操作"></a>由于近期对python使用较为广泛，尤其是对文件的自动化处理方面，每次都是零星的查找相关操作，比较繁琐费时，故该文系统记录<code>python</code>对文件的相关自动化操作</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/auto_python/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-autogame_project" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="详细解读下自己之前完成的一个python-opencv小demo"><a href="#详细解读下自己之前完成的一个python-opencv小demo" class="headerlink" title="详细解读下自己之前完成的一个python+opencv小demo"></a>详细解读下自己之前完成的一个<code>python</code>+<code>opencv</code>小demo</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/autogame_project/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vim_operate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="记录vim的一些操作细节，加深记忆，近期完成！"><a href="#记录vim的一些操作细节，加深记忆，近期完成！" class="headerlink" title="记录vim的一些操作细节，加深记忆，近期完成！"></a>记录vim的一些操作细节，加深记忆，近期完成！</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/vim_operate/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-code_specification" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="该文章写一些各种语言代码的编码规范，提高代码的易读性"><a href="#该文章写一些各种语言代码的编码规范，提高代码的易读性" class="headerlink" title="该文章写一些各种语言代码的编码规范，提高代码的易读性"></a>该文章写一些各种语言代码的编码规范，提高代码的易读性</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/code_specification/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git_operate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="主要记录git的一些操作和感悟，近期完成！"><a href="#主要记录git的一些操作和感悟，近期完成！" class="headerlink" title="主要记录git的一些操作和感悟，近期完成！"></a>主要记录git的一些操作和感悟，近期完成！</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/02/09/git_operate/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/02/12/vim-operate/">展开全文 >></a>
         </p>
       
 
