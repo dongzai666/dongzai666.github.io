@@ -154,6 +154,228 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git-operate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/02/21/git-operate/">git_operate</a>
+    </h1>
+  
+
+        
+        <a href="/2022/02/21/git-operate/" class="archive-article-date">
+  	<time datetime="2022-02-21T04:42:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git基础操作指南"><a href="#Git基础操作指南" class="headerlink" title="Git基础操作指南"></a>Git基础操作指南</h1><blockquote>
+<p>本教程是记录自己对git基础操作的一些理解</p>
+</blockquote>
+<blockquote>
+<p>简介：Git是一款免费、开源的分布式版本控制系统，而github是一个远端仓库，通过git可以对github仓库进行管理，同时方便进行团队合作，共同开发项目</p>
+</blockquote>
+<ul>
+<li><p>git status 查询当前文件夹git仓库状态，该命令比较常用，例如可以查看当前文件夹是否初始化 以及 提交历史信息</p>
+</li>
+<li><p>git init 初始化仓库，会在本地文件夹下生成一个 .git 文件</p>
+</li>
+<li><p>git add 将文件加入到<strong>本地暂存区</strong>，保存本地修改</p>
+</li>
+<li><p><code>git commit -m 提交描述信息</code> 将本地暂存区中的所有文件 上传到与本地绑定的远端仓库中</p>
+</li>
+<li><p>git log 查询所有的commit信息</p>
+</li>
+<li><p>新建分支：</p>
+<ul>
+<li>git branch 分支名 创建一个‘分支名`的分支</li>
+<li>git branch 可以查询当前所有分支</li>
+</ul>
+</li>
+<li><p>git checkout 分支  我们的所有操作都是基于分支的，在不同分支间进行切换需要用到此命令</p>
+</li>
+<li><p>git branch -b 分支  在创建新分支的同时切换到该分支，一次到位</p>
+</li>
+<li><p>删除分支：</p>
+<ul>
+<li>git branch -d 分支  当某一分支创建错误，或者该分支所有代码已经合并到master分支，此时该分支已失去价值，可通过此命令删除</li>
+<li>git branch -D 分支  该命令是强制删除指定分支，场景为：需要删除某一分支，但此时该分支并未合并入主分支，执行上一命令会提示还有分支未合并，可用该命令强制删除</li>
+</ul>
+</li>
+<li><p>打标签：对于程序开发中会有 v.1 v.n 的区别，此时可以给对应的提交代码打标签</p>
+<ul>
+<li>git tag 标签名</li>
+<li>git tag  则可以查询历史tag记录<blockquote>
+<p>同理，在打完标签以后，可以通过标签回退程序 如：git checkout 标签</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="github远端相关操作"><a href="#github远端相关操作" class="headerlink" title="github远端相关操作"></a>github远端相关操作</h2><blockquote>
+<p>在电脑本地配置好Git环境后，我们就可以从远端仓库pull代码了，但是还不能向远端仓库push代码，因为我们需要将本机电脑同远端仓库建立联系，这时需要用到SSH：</p>
+</blockquote>
+<blockquote>
+<p>那么什么是 SSH 呢？ 简单点说，SSH是一种网络协议，用于计算机之间的加密登录。目前是每一台 Linux 电脑的标准配置。而大多数 Git 服务器都会选择使用 SSH 公钥来进行授权，所以想要在 GitHub 提交代码的第一步就是要先添加 SSH key 配置。</p>
+</blockquote>
+<ul>
+<li><p>通过SSH与远端仓库建立联系：Linux 与 Mac 都是默认安装了 SSH ，而 Windows 系统安装了 Git Bash 应该也是带了 SSH的。 在终端输入 <code> ssh-keygen -t rsa</code>  </p>
+<ul>
+<li>就是指定 rsa 算法生成密钥，接着连续三个回车键（不需要输入密码），然后就会生成两个文件 id_rsa 和 id_rsa.pub ，而 id_rsa 是密钥，id_rsa.pub 就是公钥。这两文件默认分别在如下目录里生成：向GitHub 提交代码</li>
+<li>Linux/Mac 系统 在 ~/.ssh 下，win系统在 /c/Documents and Settings/username/.ssh 下，都是隐藏文件。</li>
+<li>把 id_rsa.pub 的内容添加到 GitHub 上，这样你本地的 id_rsa 密钥跟 GitHub上的 id_rsa.pub 公钥进行配对，授权成功才可以提交代码</li>
+</ul>
+</li>
+<li><p>pull/push 代码：</p>
+<ul>
+<li>‘git pull 远程主机名称 远程分支名称：本地分支名称`  从远端仓库拉下来到本地分支</li>
+<li><code>git push 远程主机名称 本地分支名称：远程分支名称</code>  将本地分支代码推到远程分支上去<blockquote>
+<p>一般来说我们远程分支名称与本地分支名称保持一致，便捷些</p>
+</blockquote>
+</li>
+<li><strong>一般为了防止产生冲突，我们强调先pull再push</strong></li>
+<li>删除远程某分支：<code>git push 远程主机名  ：远程分支</code> 原理是向远端分支提交一个空的分支覆盖掉，就相当于删除了该远端分支</li>
+</ul>
+</li>
+<li><p>上面提到的远程主机名，即我们对远程仓库的命名，如果不指定则默认 <strong>origin</strong> ,可以通过以下三种方式修改远程主机名：</p>
+<ol>
+<li>克隆仓库时：<code>git clone -o 远程主机名 仓库网址 指定本地生成文件夹名称</code><blockquote>
+<p>克隆仓库会在本地生成指定名称的文件夹，该文件夹已经初始化完毕</p>
+</blockquote>
+</li>
+<li>给已经初始化(git init)后的文件夹添加远程仓库： <code>git remote add 远程主机名 仓库网址</code></li>
+<li>直接更名：<code>git remote rename 原主机名 新主机名</code> <blockquote>
+<p>git remote 系列命令是对远程主机进行的操作，下面会有详细讲解</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>远程仓库网址命名规则：</p>
+<ul>
+<li>https: <code>https://github.com/用户名/项目名.git</code></li>
+<li>ssh: <code>git@github.com:用户名/项目名.git</code> <blockquote>
+<p>.git 可以省略</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>git信息的全局配置 ：<code>git config --glob xxx</code></p>
+<ul>
+<li>git config —global user.name “stormzhang”</li>
+<li>git config —global user.email “<a href="mailto:&#115;&#116;&#111;&#x72;&#x6d;&#x7a;&#x68;&#97;&#110;&#x67;&#46;&#100;&#101;&#x76;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#115;&#116;&#111;&#x72;&#x6d;&#x7a;&#x68;&#97;&#110;&#x67;&#46;&#100;&#101;&#x76;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a>“</li>
+<li><strong>简化命令</strong>：<code>git config --glob alias.别名 原来命令</code><ul>
+<li>例:git config –global alias.co checkout # 别名<blockquote>
+<p>一个比较屌的命令，用于美化日志查询 <code>git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot;</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>为了便于管理，Git要求每个远程主机都必须指定一个主机名，git remote 系列命令就用于对远程主机进行操作：</p>
+<ul>
+<li><code>git remote</code> 用于查看与该文件夹关联的所有远程主机名</li>
+<li><code>git remote</code> 同时查看主机名及网址</li>
+<li><code>git remote show 主机名</code> 列出所有关联主机的详细信息</li>
+<li><code>git remote rm 主机名</code> 用于删除远程主机</li>
+<li>还有上面提到的若干</li>
+</ul>
+</li>
+<li><p>查看文件改动：<code>git diff</code> 直接输入 git diff 只能比较当前文件和暂存区文件差异</p>
+<ul>
+<li>git diff &lt;$id1&gt; &lt;$id2&gt; # 比较两次提交之间的差异</li>
+<li>git diff <branch1>..<branch2> # 在两个分支之间比较</li>
+<li>git diff –staged # 比较暂存区和版本库差异</li>
+</ul>
+</li>
+<li><p>stash 中文释义：暂存区</p>
+<blockquote>
+<p>对于这个命令向来大家是比较模糊的，不太清楚它的使用场景<br>设想一个场景，假设我们正在一个新的分支做新的功能，这个时候突然有一个紧急的bug需要<br>修复，而且修复完之后需要立即发布。当然你说我先把刚写的一点代码进行提交不就行了<br>么？这样理论上当然是ok的，但是这会产品垃圾commit，原则上我们每次的commit都要有实<br>际的意义，你的代码只是刚写了一半，还没有什么实际的意义是不建议就这样commit的，那<br>么有没有一种比较好的办法，可以让我暂时切到别的分支，修复完bug再切回来，而且代码也<br>能保留的呢？<br>这个时候 stash 命令就大有用处了，前提是我们的代码没有进行 commit ，哪怕你执行了add 也没关系</p>
+</blockquote>
+<ul>
+<li>执行： <code>git stash</code> 这样就会将暂时没有commit 的代码暂存起来，这时我们进行分支切换也就没有任何问题了</li>
+<li><code>git stash list</code>  查看暂存记录<blockquote>
+<p>当你把所有bug解决后就可以通过如下命令恢复，然后切换灰来继续做之前没做完的功能</p>
+</blockquote>
+</li>
+<li><code>git stash apply</code> 将暂存区还原</li>
+<li><code>git stash drop stash_id(可选，删除指定记录)</code> 将之前最近的一次暂存记录删除，</li>
+<li><code>git stash pop</code> 还原暂存区＋删除最近一次暂存记录</li>
+<li><code>git stash clear</code> 清空所有暂存区的记录</li>
+</ul>
+</li>
+<li><p>merge &amp; rebase</p>
+<blockquote>
+<p>我们知道 merge 分支是合并的意思，我们在一个 featureA 分支开发完了一个功能，这个时候<br>需要合并到主分支 master 上去，我们只需要进行如下操作：</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge/rebase featureA</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>rebase 和 merge 的区别</p>
+<ul>
+<li>rebase 跟 merge 的区别你们可以理解成有两个书架，你需要把两个书架的书整理到一起<br>去，第一种做法是 merge ，比较粗鲁暴力，就直接腾出一块地方把另一个书架的书全部放进<br>去，虽然暴力，但是这种做法你可以知道哪些书是来自另一个书架的；第二种做法就是<br>rebase ，他会把两个书架的书先进行比较，按照购书的时间来给他重新排序，然后重新放置<br>好，这样做的好处就是合并之后的书架看起来很有逻辑，但是你很难清晰的知道哪些书来自<br>哪个书架的。</li>
+</ul>
+<blockquote>
+<p>也就是 经<strong>merge</strong>合并后的分支记录并不是只有主干一条，像小河流汇入大河一样，主干分支清晰可见，而经<strong>rebase</strong> 合并后的分支记录只有主干一条，分支是不可见的，所有分支按时间顺序汇入主干中。   </p>
+</blockquote>
+<ul>
+<li><p>总结：merge 来路可循但时间节点较乱，rebase时间节点清晰但来路不明</p>
+</li>
+<li><p>解决冲突：有conflit的时候git会智能提示，冲突的地方由 ==== 分出了上下两个部分，上部分一个叫HEAD 的字样代表是我当前所在分支的代码，下半部分是一个叫 baidu_activity 分支的代码，可以看到 HEAD 对 gradle 插件进行了升级，同时新增了一个插件，所以我们很容易判断哪些代码该保留，哪些代码该删除，我们只需要移除掉那些老旧代码，而且同时也要把那些&lt;&lt;&lt; HEAD、==== 以及 &gt;&gt;&gt;&gt;&gt;&gt;baidu_activity 这些标记符号也一并删除，最后进行一次<br>commit 就ok了。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/02/21/git-operate/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vim-operate" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
