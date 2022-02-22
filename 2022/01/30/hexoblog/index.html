@@ -166,10 +166,15 @@
 <li>首先创建名为<strong>xxx.github.io</strong>的github仓库，以后就可以通过 xxx.github.io 的网址来访问了</li>
 <li>通过如下命令来关联本地markdown文件与远端github仓库<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
 <li>打开配置文件_config.yml 配置git<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/xxx/xxxx.github.io.git</span><br></pre></td></tr></table></figure></li>
-<li>最后一步，将网站部署到github上去<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure></li>
+<li>最后一步，将网站部署到github上去<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
+<h2 id="部署时报错的坑"><a href="#部署时报错的坑" class="headerlink" title="部署时报错的坑"></a>部署时报错的坑</h2></li>
 </ul>
 </li>
 </ol>
+<ul>
+<li>报错信息如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">penSSL SSL_read: Connection was reset, errno 10054</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (F:\Blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:390:28)</span><br><span class="line">      at ChildProcess.cp.emit (F:\Blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure></li>
+<li><em>在最后一部<code>hexo d</code>时出现以上的错误，不要怀疑，是GitHub的服务器出毛病了！！！多尝试几次就欧克。</em>*</li>
+</ul>
 
         
             <div id="toc-article">
@@ -177,7 +182,7 @@
   <div class="widget-wrap" id="toc-wrap">
     <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
     <div class="widget">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%81%E7%82%B9%E8%AE%B0%E5%BD%95%E3%80%81%E5%90%8E%E7%BB%AD%E5%AE%8C%E5%96%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">要点记录、后续完善详细步骤</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%81%E7%82%B9%E8%AE%B0%E5%BD%95%E3%80%81%E5%90%8E%E7%BB%AD%E5%AE%8C%E5%96%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">要点记录、后续完善详细步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E6%97%B6%E6%8A%A5%E9%94%99%E7%9A%84%E5%9D%91"><span class="toc-text">部署时报错的坑</span></a></li></ol>
     </div>
   </div>
 
