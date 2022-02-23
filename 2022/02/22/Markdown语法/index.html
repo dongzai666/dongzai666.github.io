@@ -132,14 +132,257 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="Markdown基础语法指南"><a href="#Markdown基础语法指南" class="headerlink" title="Markdown基础语法指南"></a>Markdown基础语法指南</h1><blockquote>
-<p>前言：Markdown 语言使用相当广泛且语法简答易学，掌握它成为了程序员写作必备的技能</p>
+<p>前言：Markdown 语言使用相当广泛且语法简答易学，掌握它成为了程序员写作必备的技能,能让人优雅地沉浸式记录，专注内容而不是纠结排版，达到「心中无尘，码字入神」的境界。</p>
 </blockquote>
 <blockquote>
 <p>介绍：Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。<br>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。<br>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。<br>Markdown 编写的文档后缀为 .md, .markdown。</p>
 </blockquote>
-<h2 id="Markdown-应用"><a href="#Markdown-应用" class="headerlink" title="Markdown 应用"></a>Markdown 应用</h2><span id="more"></span>
-<p>Markdown 能被使用来撰写电子书，如：Gitbook。</p>
+<span id="more"></span>
+<h2 id="Markdown-应用"><a href="#Markdown-应用" class="headerlink" title="Markdown 应用"></a>Markdown 应用</h2><p>Markdown 能被使用来撰写电子书，如：Gitbook。</p>
 <p>当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</p>
+<h2 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h2><ol>
+<li><p>标题语法</p>
+<blockquote>
+<p>通过 ‘#’的多少来区分几级标题，文字与’#’间加空格</p>
+</blockquote>
+<p> 语法：<code># 一级标题</code></p>
+<p> 效果：</p>
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><p> 语法：<code>## 二级标题</code></p>
+<p> 效果：</p>
+<h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><p> 语法：<code>### 三级标题</code></p>
+<p> 效果：</p>
+<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3></li>
+</ol>
+<hr>
+<ol start="2">
+<li><p>段落语法</p>
+<blockquote>
+<p>通过空行将段落分割，段落开头不要有空格/<TAB></p>
+</blockquote>
+<p> 语法：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是一段文本</span><br><span class="line"></span><br><span class="line">这是第二段</span><br></pre></td></tr></table></figure>
+
+<p> 效果：</p>
+<p> 这是一段文本</p>
+<p> 这是第二段</p>
+</li>
+</ol>
+<hr>
+<ol start="3">
+<li><p>换行语法</p>
+<blockquote>
+<p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(<br>)。</p>
+</blockquote>
+<blockquote>
+<p>几乎每个 Markdown 应用程序都支持两个或多个空格进行换行，称为 结尾空格（trailing whitespace) 的方式，但这是有争议的，因为很难在编辑器中直接看到空格，并且很多人在每个句子后面都会有意或无意地添加两个空格。由于这个原因，你可能要使用除结尾空格以外的其它方式来换行。幸运的是，几乎每个 Markdown 应用程序都支持另一种换行方式：HTML 的 br 标签。</p>
+</blockquote>
+<p> <strong>为了兼容性，请在行尾添加“结尾空格”或 HTML 的 br 标签来实现换行</strong></p>
+<p> 语法：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">第一行&lt;br&gt;第二行</span><br></pre></td></tr></table></figure>
+<p> 效果：<br></p>
+<p> 第一行<br>第二行</p>
+<hr>
+</li>
+<li><p>强调语法</p>
+<blockquote>
+<p>在强调部分前后加两个’<em>‘/‘_’无空格 效果加粗，在强调部分前后加一个’</em>‘/‘_’无空格 效果斜体。</p>
+</blockquote>
+<p> 语法：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**加粗效果1**</span><br><span class="line">__加粗效果2__</span><br></pre></td></tr></table></figure>
+<p> 效果：<br><br> <strong>加粗效果1</strong> <br><br> <strong>加粗效果2</strong></p>
+<p> 语法：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*斜体效果1*</span><br><span class="line">_斜体效果2_</span><br></pre></td></tr></table></figure>
+<p> 效果:<br><br> <em>斜体效果1</em><br><br> <em>斜体效果2</em></p>
+<hr>
+</li>
+<li><p>引用语法</p>
+<blockquote>
+<p>通过在段落前加 ‘&gt;’ 来实现，同时块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+</blockquote>
+<p> 语法：<code>&gt;块引用在此</code><br><br> 效果：<br></p>
+<blockquote>
+<p>块引用在此</p>
+</blockquote>
+<p> 嵌套语法示例： </p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;* 嵌套引用1</span><br><span class="line">&gt;* 嵌套引用2</span><br></pre></td></tr></table></figure>
+<p> 效果：<br></p>
+<blockquote>
+<ul>
+<li>嵌套引用1  </li>
+<li>嵌套引用2</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ol start="6">
+<li><p>列表语法</p>
+<blockquote>
+<p>有序列表是’数字+.+空格 文字’<br><br>无序列表是”字符’*’/‘+’/‘-‘+空格 文字“</p>
+</blockquote>
+<p> 语法：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br><span class="line">* 无序列表1</span><br><span class="line">+ 无序列表2</span><br></pre></td></tr></table></figure>
+<p> 效果：<br></p>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+</ol>
+<ul>
+<li>无序列表1</li>
+</ul>
+<ul>
+<li>无序列表2<blockquote>
+<p>代码块通常采用四个空格或一个制表符缩进。当它们被放在列表中时，请将它们缩进八个空格或两个制表符。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="7">
+<li><p>代码语法</p>
+<blockquote>
+<p>在英文输入模式下 </p>
+<ul>
+<li>单行代码：通过一对反引号 ` 包围</li>
+<li>多行代码： 通过一对三反引号 ``` 包围</li>
+</ul>
+</blockquote>
+<p> 语法：</p>
+<pre><code> `单行code`
+
+ 反引号x3
+     多行code1
+     多行code2
+ 反引号x3
+ 
+</code></pre>
+<p>效果：<br></p>
+<p><code>单行code</code></p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">多行code1</span><br><span class="line">多行code2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ol>
+<li><p>分割线语法</p>
+<blockquote>
+<p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容</p>
+</blockquote>
+<p> 语法：</p>
+ <p>
+ ***<br>
+ ---<br>
+ ___
+ </p>
+
+<p> 效果：<br></p>
+<hr>
+<hr>
+<hr>
+<p> 以上三横线为分割线效果</p>
+</li>
+</ol>
+<hr>
+<ol start="9">
+<li><p>链接语法</p>
+<blockquote>
+<p>Markdown: [超链接显示名](超链接地址 超链接悬停显示文本)<br><br>HTML: &lt;a href= 链接 ‘&gt;’超链接显示名’&lt;’/a&gt;</p>
+</blockquote>
+<p> 语法：<br> <code>[这是小东仔的个人博客](dongzai666.github.io 个人博客)</code></p>
+<p> 效果:<br><br> <a target="_blank" rel="noopener" href="https://dongzai666.github.io/" title="个人博客">这是小东仔的个人博客</a></p>
+<blockquote>
+<p>对于网址和email地址用&lt;&gt;包围起来可以变成可点击的链接</p>
+</blockquote>
+<p> 语法: <code>&lt;https://dongzai666.github.io&gt;</code><br><br> 效果：<a target="_blank" rel="noopener" href="https://dongzai666.github.io/">https://dongzai666.github.io</a></p>
+</li>
+</ol>
+<ul>
+<li><p>引用类型链接语法： 引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读</p>
+<p>  语法：</p>
+<ul>
+<li>文中显示部分：<code>[超链接显示文本][对应数字序号]</code><br></li>
+<li>可放在文中任何位置(一般在末尾做注脚)的链接存贮部分: <code>[对应数序号]: 链接</code></li>
+</ul>
+<p>  效果：<br><br>  [小东仔的个人博客][1] <br><br>  [1]: <a target="_blank" rel="noopener" href="https://dongzai666.github.io/">https://dongzai666.github.io</a></p>
+<blockquote>
+<p>个人感觉没啥卵用，哈哈哈哈</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ol start="10">
+<li><p>图片链接</p>
+<blockquote>
+<p>图片链接语法只需在超链接语法前加 感叹号’!’ </p>
+</blockquote>
+<p>语法： <code>![图片名称](图片加载链接 图片悬停名称)</code><br><br>效果: </p>
+<p><img src="https://tse4-mm.cn.bing.net/th/id/OIP-C.K7i0XfdZhMwwLge9ZxvWXgAAAA?pid=ImgDet&rs=1" alt="小东仔的头像" title="小东仔"></p>
+</li>
+</ol>
+<blockquote>
+<p>给图片添加链接：将图片的markdown括在括号中，在后面添加圆括号包含的链接</p>
+</blockquote>
+<p>语法：<br>     <code>[![图片名称](图片加载链接 图片悬停名称)](图片超链接)</code></p>
+<hr>
+<ol start="11">
+<li>转义字符语法</li>
+</ol>
+<blockquote>
+<p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ </p>
+</blockquote>
+<h1 id="Markdown扩展语法指南"><a href="#Markdown扩展语法指南" class="headerlink" title="Markdown扩展语法指南"></a>Markdown扩展语法指南</h1><ol>
+<li><p>删除线语法</p>
+<blockquote>
+<p>用’~~’包围起来，呈删除线效果</p>
+</blockquote>
+<p> 语法：<code> ~~这是一段删除线效果文字~~</code></p>
+<p> 效果：<del>这是一段删除线效果文字</del></p>
+</li>
+<li><p>表格语法</p>
+<blockquote>
+<p>使用 ‘|’ 分隔每列，使用’—‘控制每列的宽度,可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心。</p>
+<ul>
+<li>‘:—‘ 左对齐</li>
+<li>‘—:’ 右对齐</li>
+<li>‘:—:’ 居中对齐</li>
+</ul>
+</blockquote>
+<p> 语法：</p>
+ <p>
+ | id | name | address |<br>
+ |:--- | :----: | ---:|<br>
+ | 11 | apd | liaoning |
+ </p>
+
+<p> 效果：</p>
+<table>
+<thead>
+<tr>
+<th align="left">id</th>
+<th align="center">name</th>
+<th align="right">address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">11</td>
+<td align="center">apd</td>
+<td align="right">liaoning</td>
+</tr>
+<tr>
+<td align="left">:—</td>
+<td align="center">:—:</td>
+<td align="right">—:</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>任务列表语法</p>
+<blockquote>
+<p>任务列表使您可以创建带有复选框的项目列表。在支持任务列表的Markdown应用程序中，复选框将显示在内容旁边。要创建任务列表，请在任务列表项之前添加破折号-和方括号[ ]，并在[ ]前面加上空格。要选择一个复选框，请在方括号[x]之间添加 x 。</p>
+</blockquote>
+<p> 语法：<code>-[x] list1</code><br><br> 效果：vscode暂时不支持该功能</p>
+</li>
+</ol>
 
         
             <div id="toc-article">
@@ -147,7 +390,7 @@
   <div class="widget-wrap" id="toc-wrap">
     <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
     <div class="widget">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97"><span class="toc-text">Markdown基础语法指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-%E5%BA%94%E7%94%A8"><span class="toc-text">Markdown 应用</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97"><span class="toc-text">Markdown基础语法指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-%E5%BA%94%E7%94%A8"><span class="toc-text">Markdown 应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown语法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">三级标题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97"><span class="toc-text">Markdown扩展语法指南</span></a></li></ol>
     </div>
   </div>
 
