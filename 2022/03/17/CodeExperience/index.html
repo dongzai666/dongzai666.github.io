@@ -142,7 +142,44 @@
 <span id="more"></span></li>
 <li><p>在python虚拟环境下跑代码<strong>用过的都说好</strong> 用啥环境就装啥，完全不用担心把主环境搞坏了！</p>
 </li>
+<li><p>在python函数内试图改变全局变量的值会报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">local variable &#x27;xxx&#x27; referenced before assignment</span><br></pre></td></tr></table></figure></li>
 </ol>
+<ul>
+<li>解决办法：只需要在该函数内声明该变量为global，再行修改<br><code>global xxx</code><br><br><code>xxx = x</code></li>
+</ul>
+<ul>
+<li>python 类，基础语法，pygame，tkinter，mysqlite</li>
+</ul>
+<p>1、myfont = pygame.font.Font(None,60)</p>
+<pre><code> #  返回一个字体对象
+
+ #  参数一：
+
+      取None表示使用系统默认字体，也可以是指定的具体名字
+
+ #  参数二：
+
+      字体的大小
+</code></pre>
+<p>2、textImage = my_font.render(text, antialias, color)</p>
+<pre><code>#  在内存中绘制文本图片，并返回一个Surface对象
+
+#  参数一：
+
+    text： str, 文本内容
+
+    antialias： bool，是否将文本的锯齿形边缘变得光滑
+
+    color：（R,G,B),  文字颜色
+</code></pre>
+<p>3、screen.blit(textImage, (10, 100))</p>
+<pre><code># 在坐标（10， 100）处展示textImage
+</code></pre>
+<ul>
+<li><p>关于pymssql模块安装失败问题，可以通过第三方 .whl文件来解决，但是呢，俺是在python虚拟环境下进行的，网上都说是在 python的Scripts文件夹下进行安装，而我按捺住稍微优点慌的心情，毕竟环境问题可不是闹的，但俺一想那俺是不是可以在虚拟环境下指定 .whl文件的路径就可以了呢，结果 —- 成功啦！！！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install D:\PyMssql\pymssql-2.1.5-cp36-cp36m-win_amd64.whl </span><br></pre></td></tr></table></figure></li>
+</ul>
 
         
             <div id="toc-article">

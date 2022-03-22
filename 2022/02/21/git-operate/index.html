@@ -226,7 +226,7 @@
 <li><p>git信息的全局配置 ：<code>git config --glob xxx</code></p>
 <ul>
 <li>git config —global user.name “stormzhang”</li>
-<li>git config —global user.email “<a href="mailto:&#x73;&#116;&#x6f;&#114;&#109;&#x7a;&#x68;&#x61;&#x6e;&#x67;&#x2e;&#x64;&#101;&#x76;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x73;&#116;&#x6f;&#114;&#109;&#x7a;&#x68;&#x61;&#x6e;&#x67;&#x2e;&#x64;&#101;&#x76;&#64;&#103;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a>“</li>
+<li>git config —global user.email “<a href="mailto:&#115;&#x74;&#111;&#114;&#x6d;&#x7a;&#x68;&#x61;&#x6e;&#103;&#x2e;&#100;&#101;&#118;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#115;&#x74;&#111;&#114;&#x6d;&#x7a;&#x68;&#x61;&#x6e;&#103;&#x2e;&#100;&#101;&#118;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>“</li>
 <li><strong>简化命令</strong>：<code>git config --glob alias.别名 原来命令</code><ul>
 <li>例:git config –global alias.co checkout # 别名<blockquote>
 <p>一个比较屌的命令，用于美化日志查询 <code>git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot;</code></p>
@@ -292,6 +292,46 @@
 <li><p>解决冲突：有conflit的时候git会智能提示，冲突的地方由 ==== 分出了上下两个部分，上部分一个叫HEAD 的字样代表是我当前所在分支的代码，下半部分是一个叫 baidu_activity 分支的代码，可以看到 HEAD 对 gradle 插件进行了升级，同时新增了一个插件，所以我们很容易判断哪些代码该保留，哪些代码该删除，我们只需要移除掉那些老旧代码，而且同时也要把那些&lt;&lt;&lt; HEAD、==== 以及 &gt;&gt;&gt;&gt;&gt;&gt;baidu_activity 这些标记符号也一并删除，最后进行一次<br>commit 就ok了。</p>
 </li>
 </ul>
+<hr>
+<p><strong>2022.3.22 更新</strong></p>
+<blockquote>
+<p>关于git commit 以及 git add 后的撤销问题</p>
+</blockquote>
+<h3 id="撤销命令：git-reset"><a href="#撤销命令：git-reset" class="headerlink" title="撤销命令：git reset"></a>撤销命令：git reset</h3><ul>
+<li><p>首先对于仓库的第一次commit提交,通过以下命令撤销</p>
+<p>  <code>git update-ref -d HEAD</code></p>
+</li>
+<li><p>对于大于灯与两次的提交可通过三种方式达到对 commit 、add 的不同撤销方式</p>
+<blockquote>
+<p>格式: <code>git reset 参数  HEAD回撤次数</code></p>
+</blockquote>
+<ol>
+<li><p>参数：</p>
+<ul>
+<li>–soft ：仅撤回commit操作，保留 add 和本地工作区代码</li>
+<li>–mixed(默认) : 同时撤回 commit 和 add操作，保留本地工作区代码</li>
+<li>–hard : 将commit 、add 以及本地工作区代码都重置，即清空暂存区和工作区</li>
+</ul>
+</li>
+<li><p>HEAD回撤次数：</p>
+<ul>
+<li>HEAD^ 回撤一次</li>
+<li>HEAD~1 回撤一次</li>
+<li>HEAD~2 回撤两次</li>
+<li>commit id 回撤到对应id版本次commit</li>
+</ul>
+</li>
+<li><p>查询commit id </p>
+<p> 通过<code>git log</code>即可查看，黄色段字符极为commit id</p>
+</li>
+</ol>
+</li>
+<li><p>git status 可以查看本地区和暂存群的文件</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line">        new file:   Autogame.py</span><br><span class="line">        new file:   r.ico</span><br><span class="line"></span><br><span class="line">------------手动分割，以上为暂存区，以下为本地区未add文件-----------</span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">        Autogame.spec</span><br><span class="line">        NewAutogame.spec</span><br><span class="line">        NewGame.zip</span><br><span class="line">        NewGame/</span><br><span class="line">        R.png</span><br><span class="line">        __pycache__/</span><br><span class="line">        build/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果我们此时想要查看 commit 的文件，可以通过<code>git show commit_id</code>来查看哦</p>
 
         
             <div id="toc-article">
@@ -299,7 +339,7 @@
   <div class="widget-wrap" id="toc-wrap">
     <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
     <div class="widget">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97"><span class="toc-text">Git基础操作指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E8%BF%9C%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">github远端相关操作</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97"><span class="toc-text">Git基础操作指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E8%BF%9C%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">github远端相关操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%91%BD%E4%BB%A4%EF%BC%9Agit-reset"><span class="toc-text">撤销命令：git reset</span></a></li></ol></li></ol></li></ol>
     </div>
   </div>
 
