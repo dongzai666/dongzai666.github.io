@@ -182,10 +182,18 @@
 </li>
 </ul>
 </li>
-<li><p><strong>关于<code>if __name__ == &#39;__main__&#39;:</code>用途的解释:</strong></p>
-<h2 id="进阶知识"><a href="#进阶知识" class="headerlink" title="进阶知识"></a>进阶知识</h2></li>
+<li><p><strong>关于<code>if __name__ == &#39;__main__&#39;:</code>用途的解释:</strong><br></p>
+<ul>
+<li>一个python文件通常有两种使用方法，1.是作为脚本直接执行，2. import 到其他的 python 脚本中被调用（模块重用）执行。</li>
+<li>因此 if <strong>name</strong> == ‘main’: 的作用就是控制这两种情况执行代码的过程，在 if <strong>name</strong> == ‘main’: 下的代码只有在第一种情况下（即文件作为脚本直接执行）才会被执行，而 import 到其他脚本中是不会被执行的。<blockquote>
+<p>通俗来将就是在该行代码下的代码只有在当前文件作为主文件（类似与c语言中的main）时才会被执行，如果该文件作为模块被其他文件引用了，那么在其他文件中调用该文件时，这些代码时不会被执行滴！！！</p>
+</blockquote>
+</li>
+<li>因为我们通常会在单独文件中写一些测试代码，这样通过该方法就可以避免作为模块时测试代码被执行的尴尬场面。。。</li>
 </ul>
-<ol>
+</li>
+</ul>
+<h2 id="进阶知识"><a href="#进阶知识" class="headerlink" title="进阶知识"></a>进阶知识</h2><ol>
 <li><p>私有方法、属性的限制：<br></p>
 <ul>
 <li>通过在方法、属性前加双下划线<code>__</code>来实现，此时它们只能在类内部调用，在类外部只能通过特殊机制调用，但我们不建议这么做，毕竟这样会违背我们将其定义为私有属性的初衷！<blockquote>
