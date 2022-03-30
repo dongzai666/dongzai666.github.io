@@ -226,7 +226,7 @@
 <li><p>git信息的全局配置 ：<code>git config --glob xxx</code></p>
 <ul>
 <li>git config —global user.name “stormzhang”</li>
-<li>git config —global user.email “<a href="mailto:&#115;&#x74;&#111;&#114;&#x6d;&#x7a;&#x68;&#x61;&#x6e;&#103;&#x2e;&#100;&#101;&#118;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#115;&#x74;&#111;&#114;&#x6d;&#x7a;&#x68;&#x61;&#x6e;&#103;&#x2e;&#100;&#101;&#118;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;</a>“</li>
+<li>git config —global user.email “<a href="mailto:&#115;&#x74;&#111;&#x72;&#109;&#122;&#x68;&#97;&#110;&#103;&#x2e;&#100;&#x65;&#118;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#115;&#x74;&#111;&#x72;&#109;&#122;&#x68;&#97;&#110;&#103;&#x2e;&#100;&#x65;&#118;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a>“</li>
 <li><strong>简化命令</strong>：<code>git config --glob alias.别名 原来命令</code><ul>
 <li>例:git config –global alias.co checkout # 别名<blockquote>
 <p>一个比较屌的命令，用于美化日志查询 <code>git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot;</code></p>
@@ -332,6 +332,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">No commits yet</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line">        new file:   Autogame.py</span><br><span class="line">        new file:   r.ico</span><br><span class="line"></span><br><span class="line">------------手动分割，以上为暂存区，以下为本地区未add文件-----------</span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">        Autogame.spec</span><br><span class="line">        NewAutogame.spec</span><br><span class="line">        NewGame.zip</span><br><span class="line">        NewGame/</span><br><span class="line">        R.png</span><br><span class="line">        __pycache__/</span><br><span class="line">        build/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>如果我们此时想要查看 commit 的文件，可以通过<code>git show commit_id</code>来查看哦</p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c2ec5f06cf1a">https://www.jianshu.com/p/c2ec5f06cf1a</a></p>
 
         
             <div id="toc-article">
