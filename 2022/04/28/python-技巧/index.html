@@ -166,24 +166,24 @@
 <ul>
 <li><p>Bad Code</p>
   <p>
-  name = "apd"
-  age = 20
-  school = "NEU"
-  if name == "apd" and age == 20 and school == "NEU":
-      print("yes")
-  if name == "apd" or age == 20 or school == "NEU":
+  name = "apd"<br>
+  age = 20<br>
+  school = "NEU"<br>
+  if name == "apd" and age == 20 and school == "NEU":<br>
+      print("yes")<br>
+  if name == "apd" or age == 20 or school == "NEU":<br>
       print("no")
   </p></li>
 <li><p>Good Code</p>
   <p>
-  conditions= [
-  name == "apd",
-  age == 20,
-  school == "NEU"
-  ]
-  if all(conditions):
-      print("yes")
-  if any(conditions):
+  conditions= [<br>
+  name == "apd",<br>
+  age == 20,<br>
+  school == "NEU"<br>
+  ]<br>
+  if all(conditions):<br>
+      print("yes")<br>
+  if any(conditions):<br>
       print("no")
   </p></li>
 </ul>
@@ -193,8 +193,8 @@
 <ul>
 <li><p>Good Code</p>
   <p>
-  a = 100
-  b = 200
+  a = 100<br>
+  b = 200<br>
   a,b = b,a
   </p></li>
 </ul>
@@ -214,12 +214,12 @@
 <ul>
 <li><p>Bad Code</p>
   <p>
-  def sum_of_squares(n1,n2):
+  def sum_of_squares(n1,n2):<br>
       return n1^2+n2^2
   </p></li>
 <li><p>Good Code</p>
   <p>
-  def sum_of_squares(*args):
+  def sum_of_squares(*args):<br>
       return sum([item**2 for item in args])
   </p></li>
 </ul>
@@ -235,9 +235,9 @@
 <ul>
 <li><p>Bad Code</p>
   <p>
-  for i in s1:
-      for j in s2:
-          if i != 'B':
+  for i in s1:<br>
+      for j in s2:<br>
+          if i != 'B':<br>
               lst.append(i+j)
   </p></li>
 <li><p>Good Code</p>
@@ -270,8 +270,8 @@
 </ol>
 <ul>
 <li>Good Code  <p>
-  lst = [1,2,4,5,3,4,4,5,6,7,4]
-  most_number_value = max(lst,key=lst.count)
+  lst = [1,2,4,5,3,4,4,5,6,7,4]<br>
+  most_number_value = max(lst,key=lst.count)<br>
   </p></li>
 </ul>
 <ol start="3">
@@ -283,7 +283,7 @@
 <ul>
 <li><p>Code</p>
   <p>
-  lst = ['a','p','d']
+  lst = ['a','p','d']<br>
   new_lst = "-".join(lst)
   </p></li>
 </ul>
@@ -295,8 +295,8 @@
 </ol>
 <ul>
 <li>Code  <p>
-  keys = ['a','b','c']
-  values = [1,2,3]
+  keys = ['a','b','c']<br>
+  values = [1,2,3]<br>
   dct = dict(zip(keys,values))
   </p></li>
 </ul>
@@ -308,8 +308,8 @@
 <blockquote>
 <p>idx是下标，item是对应值</p>
   <p>
-  lst = ["blue", "lightblue", "pink", "orange", "red"]
-  for idx, item in enumerate(lst):
+  lst = ["blue", "lightblue", "pink", "orange", "red"]<br>
+  for idx, item in enumerate(lst):<br>
       print(idx, item)
   </p></blockquote>
 </li>
@@ -320,9 +320,9 @@
 </ol>
 <ul>
 <li>Code  <P>
-  d1 = {"v1": 22, "v2": 33}
-  d2 = {"v2": 44, "v3": 55}
-  d3 = {**d1, **d2}
+  d1 = {"v1": 22, "v2": 33}<br>
+  d2 = {"v2": 44, "v3": 55}<br>
+  d3 = {**d1, **d2}<br>
   print(d3)   
   </P></li>
 </ul>
@@ -331,14 +331,14 @@
 </ol>
 <ul>
 <li>Code  <p>
-  d = {
-  "v1": 80,
-  "v2": 20,
-  "v3": 40,
-  "v4": 20,
-  "v5": 10,
-  }
-  sorted_d = dict(sorted(d.items(), key=lambda item: item[1]))
+  d = {<br>
+  "v1": 80,<br>
+  "v2": 20,<br>
+  "v3": 40,<br>
+  "v4": 20,<br>
+  "v5": 10,<br>
+  }<br>
+  sorted_d = dict(sorted(d.items(), key=lambda item: item[1]))<br>
   print(sorted_d) 
   </p></li>
 </ul>
