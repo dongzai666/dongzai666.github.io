@@ -165,29 +165,11 @@
 </ol>
 <ul>
 <li><p>Bad Code</p>
-  <p>
-  name = "apd"<br>
-  age = 20<br>
-  school = "NEU"<br>
-  if name == "apd" and age == 20 and school == "NEU":<br>
-      print("yes")<br>
-  if name == "apd" or age == 20 or school == "NEU":<br>
-      print("no")
-  </p></li>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name = &quot;apd&quot;</span><br><span class="line">age = 20</span><br><span class="line">school = &quot;NEU&quot; </span><br><span class="line">if name == &quot;apd&quot; and age == 20 and school == &quot;NEU&quot;: </span><br><span class="line">    print(&quot;yes&quot;) </span><br><span class="line">if name == &quot;apd&quot; or age == 20 or school == &quot;NEU&quot;: </span><br><span class="line">    print(&quot;no&quot;)</span><br></pre></td></tr></table></figure></li>
 <li><p>Good Code</p>
-  <p>
-  conditions= [<br>
-  name == "apd",<br>
-  age == 20,<br>
-  school == "NEU"<br>
-  ]<br>
-  if all(conditions):<br>
-      print("yes")<br>
-  if any(conditions):<br>
-      print("no")
-  </p></li>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">conditions= [ </span><br><span class="line">name == &quot;apd&quot;, </span><br><span class="line">age == 20, </span><br><span class="line">school == &quot;NEU&quot; </span><br><span class="line">] </span><br><span class="line">if all(conditions): </span><br><span class="line">    print(&quot;yes&quot;) </span><br><span class="line">if any(conditions): </span><br><span class="line">    print(&quot;no&quot;)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<ol start="3">
+<ol>
 <li>交换变量的值，在python中无需定义中间变量temp来进行值的交换，只需要按如下操作即可</li>
 </ol>
 <ul>
@@ -229,17 +211,13 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="简单演示"><a href="#简单演示" class="headerlink" title="简单演示"></a>简单演示</h3><pre><code>&lt;p&gt;需求：字符串s1 =&#39;ABC&#39;，字符串 s2 = &#39;123&#39;，要求：生成序列 A1 A2 A3 C1 C2 C3
-&lt;/p&gt;
-</code></pre>
+<h3 id="简单演示"><a href="#简单演示" class="headerlink" title="简单演示"></a>简单演示</h3><p>
+需求：字符串s1 ='ABC'，字符串 s2 = '123'，要求：生成序列 A1 A2 A3 C1 C2 C3
+    </p>
+
 <ul>
 <li><p>Bad Code</p>
-  <p>
-  for i in s1:<br>
-      for j in s2:<br>
-          if i != 'B':<br>
-              lst.append(i+j)
-  </p></li>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in s1: </span><br><span class="line">    for j in s2: </span><br><span class="line">        if i != &#x27;B&#x27;: </span><br><span class="line">            lst.append(i+j)</span><br></pre></td></tr></table></figure></li>
 <li><p>Good Code</p>
   <p>
   lst = [i+j for i in s1 for j in s2 if i!='B']
@@ -307,11 +285,7 @@
 <li><p>Code</p>
 <blockquote>
 <p>idx是下标，item是对应值</p>
-  <p>
-  lst = ["blue", "lightblue", "pink", "orange", "red"]<br>
-  for idx, item in enumerate(lst):<br>
-      print(idx, item)
-  </p></blockquote>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lst = [&quot;blue&quot;, &quot;lightblue&quot;, &quot;pink&quot;, &quot;orange&quot;, &quot;red&quot;] </span><br><span class="line">for idx, item in enumerate(lst): </span><br><span class="line">    print(idx, item)</span><br></pre></td></tr></table></figure></blockquote>
 </li>
 </ul>
 <hr>
