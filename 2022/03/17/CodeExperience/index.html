@@ -190,7 +190,30 @@
 <ul>
 <li><p>关于pymssql模块安装失败问题，可以通过第三方 .whl文件来解决，但是呢，俺是在python虚拟环境下进行的，网上都说是在 python的Scripts文件夹下进行安装，而我按捺住稍微优点慌的心情，毕竟环境问题可不是闹的，但俺一想那俺是不是可以在虚拟环境下指定 .whl文件的路径就可以了呢，结果 —- 成功啦！！！</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install D:\PyMssql\pymssql-2.1.5-cp36-cp36m-win_amd64.whl </span><br></pre></td></tr></table></figure></li>
+<li><p>关于文本处理</p>
+</li>
 </ul>
+<blockquote>
+<p>在生活中我们通常会遇到文本或数据不符合自己需求的情况，此时需要进行处理，多脏数据进行清理，以期达到我们的需求，此时通常会用到正则表达式</p>
+</blockquote>
+<ul>
+<li><ul>
+<li>^表示从每一段开头开始匹配  </li>
+<li>$表示匹配到每行行末</li>
+<li>[0-9]表示数字  </li>
+<li>{重复出现的次数}</li>
+<li>[.]表示符号’.’</li>
+<li>\n 回车</li>
+<li>.*? 可以表示任意字符</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>开头的有序序号，如<code>1. 2. ~ 100.</code>等<br>Code <code>^[0-9]&#123;1&#125;[.]</code><br>通过改变重复次数来消除所有序号</p>
+</li>
+<li><p>消除如<code>v. xxxxx</code>等<br>Code<code>v[.].*?$</code></p>
+</li>
+</ol>
 
         
             <div id="toc-article">
