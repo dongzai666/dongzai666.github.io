@@ -1,0 +1,155 @@
+##########################
+## Site Config Settings ##
+##########################
+
+# Theme version
+version: 3.0.0
+
+# Theme tone
+dark: true # true/false
+favicon: /favicon.png
+banner: "images/banner.jpg"
+banner-dark: "images/under2.jpg"
+
+# Header
+menu:
+  - page: home
+    directory: .
+    icon: fa-home
+  - page: archive
+    directory: archives/
+    icon: fa-archive
+  - page: about
+    directory: about/
+    icon: fa-user
+  - page: rss
+    directory: atom.xml
+    icon: fa-rss
+
+# RSS & Sitemap plugins
+Plugins:
+  hexo-generator-feed
+  hexo-generator-sitemap
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+
+# Content
+excerpt_link: 阅读全文
+fancybox: true
+copyright:
+  enable: true # display article copyright information, true/false.
+  content: "转载请注明出处."
+
+# Date_formats
+date_formats:
+  post: "YYYY年MM月DD日"
+
+# Sidebar
+sidebar: right  # right/left/bottom
+widgets:
+  - recent_posts
+  - tagcloud
+  - category
+  - archive
+  - tag
+  - links
+
+# Widget behavior
+archive_type: 'yearly'   # defalut 'monthly'
+archive_format: 'YYYY年MM月'
+show_count: true
+recent_posts_limits: 5
+
+# Toc
+toc:
+  enable: true
+  list_number: false
+
+# Article share
+share:
+  local_share: true
+  baidu_share: false
+
+# Miscellaneous
+busuanzi: true ## If you want to use Busuanzi page views please set the value to true.
+baidu_analytics:
+google_analytics:
+gauges_analytics:
+
+# MathJax support
+mathjax:
+  enable: false  # true/false.
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+# Reward
+reward:
+  enable: false  # true/false 是否开启 打赏功能
+  wechat: '/css/images/wechat-pay.jpg'
+  alipay: '/css/images/alipay-pay.jpg'
+  buttonTxt: '打赏'
+  title: "“感谢你的支持，我会继续努力！”"
+  content: "扫码打赏，感谢支持"
+
+# About page
+about:
+  photo_url: https://tse4-mm.cn.bing.net/th/id/OIP-C.K7i0XfdZhMwwLge9ZxvWXgAAAA?pid=ImgDet&rs=1
+
+  items:
+  # - label: email
+  #   url: 2689268026@qq.com
+  #   title: 小东仔
+  - label: github
+    url: https://github.com/dongzai666
+    title: dongzai666
+  - label: 知乎
+    url: https://www.zhihu.com/people/zhi-zhi-wei-bu-zhi-51-74
+    title: 好学的小东仔
+
+# Gitalk comment
+gitalk:
+  enable: false
+  owner: ## Your GitHub ID, e.g. username
+  repo: ## The repository to store your comments, make sure you're the repo's owner, e.g. gitalk.github.io
+  client_id: ## GitHub client ID, e.g. 75752dafe7907a897619
+  client_secret: ## GitHub client secret, e.g. ec2fb9054972c891289640354993b662f4cccc50
+  admin: ## Github repo owner and collaborators, only these guys can initialize github issues.
+  language: 'zh-CN' ## Language
+  pagerDirection: last # Comment sorting direction, available values are last and first.
+
+# Valine comment. https://valine.js.org
+valine:
+  enable: false # if you want use valine,please set this value is true
+  appId: # leancloud application app id
+  appKey: # leancloud application app key
+  notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+  verify: false # valine verify code (true/false)
+  pageSize: 10 # comment list page size
+  avatar: mm # gravatar style https://valine.js.org/#/avatar
+  lang: zh-cn # i18n: zh-cn/en
+  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header info
+
+# Changyan comment. 畅言
+changyan:
+  enable: false
+  appid: cyvSVY6z7
+  appkey: 392e3c18377681424b77c02c7ff1bc64
+
+# Other comments
+comment:
+  disqus: ## disqus_shortname
+  livere: ## 来必力(data-uid)
+  uyan: ## 友言(uid)
+  cloudTie: ## 网易云跟帖(productKey)
+
+# Friend Links widget. Empty links will hide widget.
+links:
+  - title: 百度技术培训中心
+    url: http://bit.baidu.com/index
+    # url: https://chaoo.oschina.io/2016/12/29/BlueLake%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E8%AF%A6%E7%BB%86%E9%85%8D%E7%BD%AE.html
+#   - title: site-name2
+#     url: http://www.example2.com/
+#   - title: site-name3
+#     url: http://www.example3.com/
