@@ -131,48 +131,103 @@
     </div>
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="博客搭建要点及步骤"><a href="#博客搭建要点及步骤" class="headerlink" title="博客搭建要点及步骤"></a>博客搭建要点及步骤</h1><blockquote>
-<p>俺认为新建一个博客网站还是挺容易的，接下来总结下主要步骤要点</p>
+        <h1 id="Hexo静态网页博客搭建及实现多平台同步"><a href="#Hexo静态网页博客搭建及实现多平台同步" class="headerlink" title="Hexo静态网页博客搭建及实现多平台同步"></a>Hexo静态网页博客搭建及实现多平台同步</h1><blockquote>
+<p>该网站基于市面上流行的NodeJs框架下的Hexo，托管于github，实现了一个个人博客的基本功能，本文主要讲解在<strong>linux</strong>平台下搭建hexo环境的主要步骤以及在不同平台（如想同时在windows、linux下发布、管理博客内容的工作场景）同步内容的解决方案！</p>
+</blockquote>
+<blockquote>
+<p>前置内容</p>
+<ul>
+<li>linux基本命令的使用</li>
+<li>Git命令行的使用及功能</li>
+</ul>
 </blockquote>
 <span id="more"></span>
-<ol>
-<li><p>安装<strong>nodejs</strong> ，利用里面的<strong>hexo</strong>框架可以搭建博客</p>
-<ul>
-<li>通过hexo初始化我们的博客仓库，也就是生成一个文件夹</li>
-<li>source/_posts 文件夹下存放.md 格式的博客文章</li>
-<li>themes 文件夹下存放主题<blockquote>
-<p>可以去github克隆喜欢的主题到该目录下，然后通过修改 _config.yaml 中 theme 字段为克隆主题生效！</p>
+
+<h2 id="博客网站搭建–环境配置"><a href="#博客网站搭建–环境配置" class="headerlink" title="博客网站搭建–环境配置"></a>博客网站搭建–环境配置</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108094987">参考链接1</a></p>
+<blockquote>
+<p>在搭建Hexo环境前需要配置本地环境，主要有：</p>
 </blockquote>
-</li>
-</ul>
-</li>
-<li><p>此时我们的网站只能在本地运行登录，接下俩需要挂载到github仓库中方可全网访问</p>
 <ul>
-<li>网站修改后刷新生效命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  </span><br><span class="line">hexo g      #生成新网站，刷新  generate</span><br><span class="line">hexo s      #启动服务器 server</span><br></pre></td></tr></table></figure></li>
+<li>Nodejs  ：需要注意其版本，建议安装至最新版本，否则会出现报错<ul>
+<li>命令行安装： <code>sudo apt install nodejs</code>,ubuntu默认安装版本8.10，其他安装方法可自行百度</li>
+<li>版本查询：<code>Node -v</code></li>
+<li>版本更新：通过安装Node工具包<strong>n</strong>来实现<ul>
+<li>安装n <code>sudo npm install n -g</code></li>
+<li>安装最新稳定nodejs <code>sudo n stable</code></li>
 </ul>
 </li>
-<li><p>可以给自己的博客加上评论功能，这样会高逼格一点</p>
-<ul>
-<li>可以在畅言网站上免费注册z-blog功能，获取到<strong>appid</strong> 和 <strong>appsecret</strong>进入你的themes/对应主题,打开_config.yml，定位到 changyan ，把 enable 改为 true。</li>
-<li>然后是修改如下<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">changyan:</span><br><span class="line">enable: true</span><br><span class="line">appid: 这里写上你的畅言在appid</span><br><span class="line">appkey: 这里写上你的畅言在appkey</span><br></pre></td></tr></table></figure>
-然后刷新配置三件套就可以了！</li>
 </ul>
-<hr>
+</li>
+<li>npm  ：<code>sudo apt install npm</code></li>
+<li>git  : <code>sudo apt install git</code></li>
+</ul>
+<h2 id="博客网站搭建–实现步骤"><a href="#博客网站搭建–实现步骤" class="headerlink" title="博客网站搭建–实现步骤"></a>博客网站搭建–实现步骤</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/115153910">参考链接2</a></p>
+<ol>
+<li><p>当前期需要环境准备好以后，配置hexo环境就相当简单了，使用命令： <code>sudo nmp install hexo-cli -g</code></p>
+</li>
+<li><p>然后在本地新建一个文件夹，通过<code>hexo init 本地文件夹路径</code>在指定文件夹生成文件体系，需要我们自定义的文件夹如下：</p>
+<ul>
+<li>source/_posts 文件夹下存放.md 格式的博客文章</li>
+<li>themes 文件夹下存放主题</li>
+<li>可以去github克隆喜欢的主题到该目录下，然后通过修改 _config.yaml 中 theme 字段为克隆主题生效！</li>
+</ul>
 </li>
 <li><p>接下来就是将我们的网站挂载到github仓库上，这样任何人就能通过我们的网址来访问我们的网站了</p>
 <ul>
 <li>首先创建名为<strong>xxx.github.io</strong>的github仓库，以后就可以通过 xxx.github.io 的网址来访问了</li>
 <li>通过如下命令来关联本地markdown文件与远端github仓库<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
 <li>打开配置文件_config.yml 配置git<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/xxx/xxxx.github.io.git</span><br></pre></td></tr></table></figure></li>
-<li>最后一步，将网站部署到github上去<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d </span><br></pre></td></tr></table></figure>
-<h2 id="部署时报错的坑"><a href="#部署时报错的坑" class="headerlink" title="部署时报错的坑"></a>部署时报错的坑</h2></li>
 </ul>
 </li>
+<li><p>可以给自己的博客加上评论功能，这样会高逼格一点</p>
+<ul>
+<li>可以在畅言网站上免费注册z-blog功能，获取到<strong>appid</strong> 和 <strong>appsecret</strong>进入你的themes/对应主题,打开_config.yml，定位到 changyan ，把 enable 改为 true。</li>
+<li>然后是修改如下<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">changyan:</span><br><span class="line">enable: true</span><br><span class="line">appid: 这里写上你的畅言在appid</span><br><span class="line">appkey: 这里写上你的畅言在appkey</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>最后是通过以下命令实现本地刷新并上传到远程仓库</p>
+<ul>
+<li>网站修改后刷新生效命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清除本地原缓冲文件 </span><br><span class="line">hexo g      #生成新网站，刷新  generate</span><br><span class="line">hexo s      #启动服务器 server</span><br></pre></td></tr></table></figure></li>
+<li>部署网站到远端</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #deploy部署</span><br></pre></td></tr></table></figure>
+<h2 id="博客网站搭建–部署报错"><a href="#博客网站搭建–部署报错" class="headerlink" title="博客网站搭建–部署报错"></a>博客网站搭建–部署报错</h2></li>
 </ol>
 <ul>
 <li>报错信息如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">penSSL SSL_read: Connection was reset, errno 10054</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (F:\Blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:390:28)</span><br><span class="line">      at ChildProcess.cp.emit (F:\Blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure></li>
 <li><em>在最后一部<code>hexo d</code>时出现以上的错误，不要怀疑，是GitHub的服务器出毛病了！！！多尝试几次就欧克。</em>*</li>
 </ul>
+<hr>
+<h2 id="博客网站搭建–多端同步"><a href="#博客网站搭建–多端同步" class="headerlink" title="博客网站搭建–多端同步"></a>博客网站搭建–多端同步</h2><blockquote>
+<p>解决方案，使用GitHub的分支！在博客对应的仓库中新建一个分支。一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页,通过在不同平台拉取实现资源文件同步。</p>
+</blockquote>
+<ul>
+<li>分支master：静态网页资源</li>
+<li>分支sync：网站原始文件</li>
+</ul>
+<ol>
+<li>在github网页端创建基于master的分支sync(此时sync的文件同master完全一致)，将本地生成网站原始文件转移至其他文件夹，防止待会pull时被覆盖</li>
+<li>Git操作</li>
+</ol>
+<ul>
+<li> git init 初始化文件夹，生成.git文件</li>
+<li> git remote add origin <a target="_blank" rel="noopener" href="https://github.com/dongzai666/dongzai666.github.io.git">https://github.com/dongzai666/dongzai666.github.io.git</a>  链接远程仓库</li>
+<li> git pull origin sync:master 将sync分支内容拉下来，与本地建立链接，然后删除除了.git以外的所有文件</li>
+</ul>
+<ol start="3">
+<li>将转移的网站原始文件复制回来，修改.gitignore文件，避免上传一些不需要的文件，内容如下：</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传</p>
+</blockquote>
+<ol>
+<li><p>通过<br><code>git push origin master:sync -f</code><br> <strong>强制覆盖远端sync分支的内容</strong></p>
+<p> 此时就实现了远端master分支存放生成的静态网页，sync分支用来存放网站原始文件的目的！！！</p>
+</li>
+<li><p>之后在其他平台只需要先pull远端sync分支代码，修改完毕后再push上去即可，其他网站更新部署仍然同原来一致。</p>
+</li>
+</ol>
 
         
             <div id="toc-article">
@@ -180,7 +235,7 @@
   <div class="widget-wrap" id="toc-wrap">
     <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
     <div class="widget">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%A6%81%E7%82%B9%E5%8F%8A%E6%AD%A5%E9%AA%A4"><span class="toc-text">博客搭建要点及步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E6%97%B6%E6%8A%A5%E9%94%99%E7%9A%84%E5%9D%91"><span class="toc-text">部署时报错的坑</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5"><span class="toc-text">Hexo静态网页博客搭建及实现多平台同步</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">博客网站搭建–环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="toc-text">博客网站搭建–实现步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99"><span class="toc-text">博客网站搭建–部署报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5"><span class="toc-text">博客网站搭建–多端同步</span></a></li></ol></li></ol>
     </div>
   </div>
 

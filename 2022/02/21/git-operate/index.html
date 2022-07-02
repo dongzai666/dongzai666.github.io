@@ -226,7 +226,7 @@
 <li><p>git信息的全局配置 ：<code>git config --glob xxx</code></p>
 <ul>
 <li>git config —global user.name “stormzhang”</li>
-<li>git config —global user.email “<a href="mailto:&#x73;&#116;&#x6f;&#114;&#x6d;&#x7a;&#x68;&#97;&#110;&#x67;&#x2e;&#x64;&#x65;&#118;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#x73;&#116;&#x6f;&#114;&#x6d;&#x7a;&#x68;&#97;&#110;&#x67;&#x2e;&#x64;&#x65;&#118;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a>“</li>
+<li>git config —global user.email “<a href="mailto:&#x73;&#x74;&#x6f;&#114;&#109;&#122;&#x68;&#97;&#x6e;&#x67;&#46;&#x64;&#x65;&#x76;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x73;&#x74;&#x6f;&#114;&#109;&#122;&#x68;&#97;&#x6e;&#x67;&#46;&#x64;&#x65;&#x76;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>“</li>
 <li><strong>简化命令</strong>：<code>git config --glob alias.别名 原来命令</code><ul>
 <li>例:git config –global alias.co checkout # 别名<blockquote>
 <p>一个比较屌的命令，用于美化日志查询 <code>git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot;</code></p>
@@ -333,6 +333,12 @@
 
 <p>如果我们此时想要查看 commit 的文件，可以通过<code>git show commit_id</code>来查看哦</p>
 <p>参考文章：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c2ec5f06cf1a">https://www.jianshu.com/p/c2ec5f06cf1a</a></p>
+<hr>
+<h3 id="2022-7-02更新"><a href="#2022-7-02更新" class="headerlink" title="2022.7.02更新"></a>2022.7.02更新</h3><ul>
+<li>git fresh ：该命令用于从远程获取代码库，告诉 Git 去获取它有你没有的数据，然后你可以通过执行 git merge 来实现将更新数据合并到你的分支的操作。</li>
+<li>git push 主机 本地分支:远端分支 -f :实现对远端分支的强制合并</li>
+<li>git branch -a : 查看远端分支名称</li>
+</ul>
 
         
             <div id="toc-article">
@@ -340,7 +346,7 @@
   <div class="widget-wrap" id="toc-wrap">
     <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
     <div class="widget">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97"><span class="toc-text">Git基础操作指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E8%BF%9C%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">github远端相关操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%91%BD%E4%BB%A4%EF%BC%9Agit-reset"><span class="toc-text">撤销命令：git reset</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97"><span class="toc-text">Git基础操作指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E8%BF%9C%E7%AB%AF%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-text">github远端相关操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%91%BD%E4%BB%A4%EF%BC%9Agit-reset"><span class="toc-text">撤销命令：git reset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2022-7-02%E6%9B%B4%E6%96%B0"><span class="toc-text">2022.7.02更新</span></a></li></ol></li></ol></li></ol>
     </div>
   </div>
 
