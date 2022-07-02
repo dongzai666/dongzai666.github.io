@@ -116,10 +116,13 @@ FATAL {
   ```
 > 如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传
 
-1. 通过
- `git push origin master:sync -f`
+4. 通过`git push origin master:sync -f`
     **强制覆盖远端sync分支的内容**
 
     此时就实现了远端master分支存放生成的静态网页，sync分支用来存放网站原始文件的目的！！！
 
-5. 之后在其他平台只需要先pull远端sync分支代码，修改完毕后再push上去即可，其他网站更新部署仍然同原来一致。
+5. 在新设备上将该仓库sync分支克隆下来 `git clone -b sync      https://github.com/dongzai666/dongzai666.github.io.git  Blog`    
+   
+6. 此时新设备不需要再`hexo init`了，此时只需`npm install`即可安装所需要的环境，同时别忘了关联本地markdown文件和github仓库，命令：`npm install hexo-deployer-git --save`
+
+7.到这一步后 其他博客更新、管理操作同原来一致，只需要在每次修改博客内容后将源文件及时同步到仓库中即可！其他设备只需要在编辑前进行pull操作～
