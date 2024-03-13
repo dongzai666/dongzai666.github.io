@@ -141,12 +141,6 @@
 </ul>
 </li>
 <li><p>Matlab支持的其他数据结构</p>
-<ul>
-<li>字符串型数据，用单引号括起来</li>
-<li>多维数据：是矩阵的直接扩展，多个下标</li>
-<li>单元数据：将不同类型的数据集成到一个变量名下面，用{}表示</li>
-<li>结构体：A.b，引用也用A.b，不是A-&gt;b</li>
-<li>类与对象
       
     </div>
     <footer class="article-footer">
@@ -273,25 +267,11 @@
 <li>处理用户的多个输入</li>
 </ol>
 <ul>
-<li><p>Bad Code</p>
-  <p>
+<li>Bad Code  <p>
   n1 = input("please input a number: ")<br>
   n1 = input("please input a number: ")<br>
   n1 = input("please input a number: ")
-</p></li>
-<li><p>Good Code</p>
-<blockquote>
-<p>输入数字以空格分隔，或者在.split()中指定分隔符也可</p>
-  <p>
-  n1,n2,n3 = input("please input three number:").split()
-  </p></blockquote>
-</li>
-</ul>
-<ol start="2">
-<li><p>处理多个条件语句</p>
-<blockquote>
-<p>对于多个and语句可以用all()代替、多个or语句可以用any()代替</p>
-</blockquote>
+</p>
       
     </div>
     <footer class="article-footer">
@@ -432,13 +412,7 @@
 <ol>
 <li>类：用于定义抽象的对象模型，它是描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。</li>
 <li>类属性（类变量）：是该类的所有实例化对象所公用的，定义在类中且在函数体方法以外。通常不用做实例化对象。</li>
-<li>实例属性（实例变量）：其值是当前实例化对象所特有的，所有实例化对象都有但值不一样，定义在**<strong>init</strong>()** 函数当中</li>
-<li>方法：类中定义的函数。<strong>def（）</strong></li>
-<li>方法重写：如果从父类继承的方法（即函数）不能满足子类的需求，可以对其进行改写，该过程叫做方法的覆盖，也称作方法的重写。</li>
-<li>实例化：创建一个类的具体对象的过程，类似于c语言中定义变量的过程。</li>
-<li>实例：根据类定义的抽象模型创建出来的具体对象。</li>
-<li>数据成员：类变量或者实例变量用于处理类及其实例对象的相关的数据。</li>
-<li>继承：即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。
+<li>实例属性（实例变量）：其值是当前实例化对象所特有的，所有实例化对象都有但值不一样，定义在**<strong>init</strong>()** 函数当中
       
     </div>
     <footer class="article-footer">
@@ -501,13 +475,6 @@
 <li><p>python之命令行运行代码文件 <br><br> 在终端通过 <code>python 代码文件名.py</code> 运行<br><br>可以在python虚拟环境中运行，这样可以有效防止版本冲突！</p>
 </li>
 <li><p>在python虚拟环境下跑代码<strong>用过的都说好</strong> 用啥环境就装啥，完全不用担心把主环境搞坏了！</p>
-</li>
-<li><p>在python函数内试图改变全局变量的值会报错：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">local variable &#x27;xxx&#x27; referenced before assignment</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li>解决办法：只需要在该函数内声明该变量为global，再行修改<br><code>global xxx</code><br><br><code>xxx = x</code></li>
-</ul>
       
     </div>
     <footer class="article-footer">
@@ -570,9 +537,7 @@
 <p>首先本地要有python环境，可以通过 可以在电脑左下角搜索【编辑系统环境变量】——【用户变量】——【PATH】中找到 </p>
 </blockquote>
 <ol>
-<li>创建虚拟环境包安装</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">pip install virtualenvwrapper-win </span><br></pre></td></tr></table></figure>
+<li><p>创建虚拟环境包安装</p>
       
     </div>
     <footer class="article-footer">
@@ -712,7 +677,6 @@
 <p>介绍：Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。<br>Markdown 语言在 2004 由约翰·格鲁伯（英语：John Gruber）创建。<br>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。<br>Markdown 编写的文档后缀为 .md, .markdown。</p>
 </blockquote>
 <h2 id="Markdown-应用"><a href="#Markdown-应用" class="headerlink" title="Markdown 应用"></a>Markdown 应用</h2><p>Markdown 能被使用来撰写电子书，如：Gitbook。</p>
-<p>当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</p>
       
     </div>
     <footer class="article-footer">
