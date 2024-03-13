@@ -201,7 +201,14 @@
 <p>今天心血来潮，想要换掉使用已久的win10系统入坑win11，所以记录一下系统升级遇到的一些问题</p>
 </blockquote>
 <ol>
-<li><p>首先要进行系统硬件检查，看是否满足win11安装基本要求，一般来说，最近5年的电脑都满足该要求，只不过需要手动打开 <strong>TPM</strong> 功能（受信任的平台模块 (TPM) 2.0 版本），以惠普为例，步骤：</p>
+<li>首先要进行系统硬件检查，看是否满足win11安装基本要求，一般来说，最近5年的电脑都满足该要求，只不过需要手动打开 <strong>TPM</strong> 功能（受信任的平台模块 (TPM) 2.0 版本），以惠普为例，步骤：</li>
+</ol>
+<pre><code>* 重启电脑，通过hot键F9进入Blos界面
+* 在“安全”选项卡上，检查 TPM 设备状态是否为“隐藏”。
+* 将 TPM 设备状态切换为“可用”。
+* 将 TPM 状态更改为“已启用”。
+* 按 f10 退出，然后单击“是”保存更改。如果出现提示，请按 f1 确认更改并重新启动计算机。
+</code></pre>
       
     </div>
     <footer class="article-footer">
@@ -266,11 +273,25 @@
 <li>处理用户的多个输入</li>
 </ol>
 <ul>
-<li>Bad Code  <p>
+<li><p>Bad Code</p>
+  <p>
   n1 = input("please input a number: ")<br>
   n1 = input("please input a number: ")<br>
   n1 = input("please input a number: ")
-</p>
+</p></li>
+<li><p>Good Code</p>
+<blockquote>
+<p>输入数字以空格分隔，或者在.split()中指定分隔符也可</p>
+  <p>
+  n1,n2,n3 = input("please input three number:").split()
+  </p></blockquote>
+</li>
+</ul>
+<ol start="2">
+<li><p>处理多个条件语句</p>
+<blockquote>
+<p>对于多个and语句可以用all()代替、多个or语句可以用any()代替</p>
+</blockquote>
       
     </div>
     <footer class="article-footer">
@@ -545,6 +566,13 @@
 <blockquote>
 <p>解决方案：在电脑上新建一python虚拟环境，专用于打包程序<br>虚拟环境可以理解为是Python解释器的一个副本，在这个环境你可以安装私有包，而且不会影响系统中安装的全局Python解释器。虚拟环境非常有用，可以在系统的Python解释器中避免包的混乱和版本的冲突。【重要是不同虚拟环境可以搭建不同的python版本，创建时候选择】</p>
 </blockquote>
+<h2 id="详细-步骤"><a href="#详细-步骤" class="headerlink" title="详细 步骤"></a>详细 步骤</h2><blockquote>
+<p>首先本地要有python环境，可以通过 可以在电脑左下角搜索【编辑系统环境变量】——【用户变量】——【PATH】中找到 </p>
+</blockquote>
+<ol>
+<li>创建虚拟环境包安装</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br><span class="line">pip install virtualenvwrapper-win </span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -744,6 +772,11 @@
 <p>本文主要记录自己初学前端HTML的一些基础语法及使用见解</p>
 </blockquote>
 <p>官方解释：HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。</p>
+<p><strong>关于前端编辑器有很多，本地比较推荐轻量化的VScode，插件种类繁多，功能强大，在线运行的话强推 <code>https://jsbin.com/jodevezojo/edit?html,output</code></strong></p>
+<ul>
+<li>基本代码框架<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
       
     </div>
     <footer class="article-footer">

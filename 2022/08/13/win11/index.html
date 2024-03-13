@@ -135,20 +135,18 @@
 <p>今天心血来潮，想要换掉使用已久的win10系统入坑win11，所以记录一下系统升级遇到的一些问题</p>
 </blockquote>
 <ol>
-<li><p>首先要进行系统硬件检查，看是否满足win11安装基本要求，一般来说，最近5年的电脑都满足该要求，只不过需要手动打开 <strong>TPM</strong> 功能（受信任的平台模块 (TPM) 2.0 版本），以惠普为例，步骤：</p>
+<li>首先要进行系统硬件检查，看是否满足win11安装基本要求，一般来说，最近5年的电脑都满足该要求，只不过需要手动打开 <strong>TPM</strong> 功能（受信任的平台模块 (TPM) 2.0 版本），以惠普为例，步骤：</li>
+</ol>
+<pre><code>* 重启电脑，通过hot键F9进入Blos界面
+* 在“安全”选项卡上，检查 TPM 设备状态是否为“隐藏”。
+* 将 TPM 设备状态切换为“可用”。
+* 将 TPM 状态更改为“已启用”。
+* 按 f10 退出，然后单击“是”保存更改。如果出现提示，请按 f1 确认更改并重新启动计算机。
+</code></pre>
 <span id="more"></span>
-
-<ul>
-<li>重启电脑，通过hot键F9进入Blos界面</li>
-<li>在“安全”选项卡上，检查 TPM 设备状态是否为“隐藏”。</li>
-<li>将 TPM 设备状态切换为“可用”。</li>
-<li>将 TPM 状态更改为“已启用”。</li>
-<li>按 f10 退出，然后单击“是”保存更改。如果出现提示，请按 f1 确认更改并重新启动计算机。</li>
-</ul>
-<blockquote>
-<p>附录<a target="_blank" rel="noopener" href="https://download.microsoft.com/download/d/5/9/d59a6828-52d9-4d08-a995-3c08cef7e802/3.7/x64/WindowsPCHealthCheckSetup.msi">windows系统监测工具</a></p>
-</blockquote>
-</li>
+<pre><code>&gt; 附录[windows系统监测工具](https://download.microsoft.com/download/d/5/9/d59a6828-52d9-4d08-a995-3c08cef7e802/3.7/x64/WindowsPCHealthCheckSetup.msi)
+</code></pre>
+<ol start="2">
 <li><p>在系统更新中查看Microsoft是否有推送win11更新计划，有则直接点击下载即可，但是我的电脑并未推送，且系统更新显示 “此电脑当前不满足win11运行最低系统要求” ，虽然我的电脑已经符合要求，此时就只需要通过下载<strong>win11安装助手</strong> 即可</p>
 <blockquote>
 <p>附录：<a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/?linkid=2171764">Win11安装助手</a></p>
