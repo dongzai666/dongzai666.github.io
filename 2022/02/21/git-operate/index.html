@@ -137,7 +137,6 @@
 <blockquote>
 <p>简介：Git是一款免费、开源的分布式版本控制系统，而github是一个远端仓库，通过git可以对github仓库进行管理，同时方便进行团队合作，共同开发项目</p>
 </blockquote>
-<span id="more"></span>
 <ul>
 <li><p>git status 查询当前文件夹git仓库状态，该命令比较常用，例如可以查看当前文件夹是否初始化 以及 提交历史信息</p>
 </li>
@@ -162,7 +161,7 @@
 <li><p>删除分支：</p>
 <ul>
 <li>git branch -d 分支  当某一分支创建错误，或者该分支所有代码已经合并到master分支，此时该分支已失去价值，可通过此命令删除</li>
-<li>git branch -D 分支  该命令是强制删除指定分支，场景为：需要删除某一分支，但此时该分支并未合并入主分支，执行上一命令会提示还有分支未合并，可用该命令强制删除</li>
+<li>git branch -D 分支  该命令是强制删除指定分支，场景为：需要删除某一分支，但此时该分支并未合并入主分支，执行上一命令会提示还有分支未合并，可用该命令强制删除<span id="more"></span></li>
 </ul>
 </li>
 <li><p>打标签：对于程序开发中会有 v.1 v.n 的区别，此时可以给对应的提交代码打标签</p>
@@ -226,7 +225,7 @@
 <li><p>git信息的全局配置 ：<code>git config --glob xxx</code></p>
 <ul>
 <li>git config —global user.name “stormzhang”</li>
-<li>git config —global user.email “<a href="mailto:&#x73;&#x74;&#111;&#x72;&#109;&#122;&#x68;&#97;&#x6e;&#x67;&#46;&#100;&#101;&#118;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#x73;&#x74;&#111;&#x72;&#109;&#122;&#x68;&#97;&#x6e;&#x67;&#46;&#100;&#101;&#118;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;</a>“</li>
+<li>git config —global user.email “<a href="mailto:&#x73;&#116;&#x6f;&#x72;&#109;&#x7a;&#x68;&#97;&#x6e;&#103;&#x2e;&#100;&#x65;&#x76;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x73;&#116;&#x6f;&#x72;&#109;&#x7a;&#x68;&#97;&#x6e;&#103;&#x2e;&#100;&#x65;&#x76;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“</li>
 <li><strong>简化命令</strong>：<code>git config --glob alias.别名 原来命令</code><ul>
 <li>例:git config –global alias.co checkout # 别名<blockquote>
 <p>一个比较屌的命令，用于美化日志查询 <code>git config --global alias.lg &quot;log --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit --date=relative&quot;</code></p>

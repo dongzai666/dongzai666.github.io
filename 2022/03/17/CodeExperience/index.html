@@ -139,7 +139,7 @@
 </blockquote>
 <ol>
 <li><p>python之命令行运行代码文件 <br><br> 在终端通过 <code>python 代码文件名.py</code> 运行<br><br>可以在python虚拟环境中运行，这样可以有效防止版本冲突！</p>
-<span id="more"></span></li>
+</li>
 <li><p>在python虚拟环境下跑代码<strong>用过的都说好</strong> 用啥环境就装啥，完全不用担心把主环境搞坏了！</p>
 </li>
 <li><p>在python函数内试图改变全局变量的值会报错：</p>
@@ -148,7 +148,10 @@
 <ul>
 <li>解决办法：只需要在该函数内声明该变量为global，再行修改<br><code>global xxx</code><br><br><code>xxx = x</code></li>
 </ul>
-<ol start="4">
+<span id="more"></span>
+<ol start="2">
+<li><p>在python虚拟环境下跑代码<strong>用过的都说好</strong> 用啥环境就装啥，完全不用担心把主环境搞坏了！</p>
+</li>
 <li><p>在安装一些模块的时候如果配置环境过程比较复杂，而直接<code>pip install 模块</code>行不通的时候，可以通过下载对应的 <strong>.whl</strong>文件通过<code>pip install 文件路径\xxx.whl</code>来安装快捷简单，但前提是有对应的.whl文件</p>
 <blockquote>
 <p>我在安装PyHook3的时候就遇到了此类问题，网上一堆教程配置繁琐且未成功，在github上找到对应的.whl即完成了安装，所有还是待好好利用github呀！</p>
