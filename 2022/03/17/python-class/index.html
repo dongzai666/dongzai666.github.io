@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>python_class | 小东仔的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="小东仔的个人博客">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="小东仔的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小东仔的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-python-class" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      python_class
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-03-17T13:08:49.000Z" itemprop="datePublished">2022年03月17日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2022/03/17/python-class/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Python学习之-类-calss"><a href="#Python学习之-类-calss" class="headerlink" title="Python学习之-类(calss)"></a>Python学习之-类(calss)</h1><blockquote>
+<p>本文主要记录下自己对python类相关知识的一些理解，平时也经常使用python来完成一些项目，不过由于没有像c/c++ 那样系统的学习，所以很多概念上存在模糊，此番重点钻研，记录所学</p>
+</blockquote>
+<blockquote>
+<p>python用多了就会觉得python真香，有很多现成的库可以调用，不用像c/c++ 那样造轮子啦~ 话虽如此，各有长短，没有绝对哪一门语言更好的说法，只有哪个语言更适合！</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="基础概念知识"><a href="#基础概念知识" class="headerlink" title="基础概念知识"></a>基础概念知识</h2><blockquote>
+<p>python是面向对象的编程语言，而面向对象语言的最基本特征就是<strong>类</strong>和<strong>实例</strong></p>
+</blockquote>
+<ul>
+<li><p>理论解释</p>
+<ol>
+<li>类：用于定义抽象的对象模型，它是描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。</li>
+<li>类属性（类变量）：是该类的所有实例化对象所公用的，定义在类中且在函数体方法以外。通常不用做实例化对象。</li>
+<li>实例属性（实例变量）：其值是当前实例化对象所特有的，所有实例化对象都有但值不一样，定义在**<strong>init</strong>()** 函数当中</li>
+<li>方法：类中定义的函数。<strong>def（）</strong></li>
+<li>方法重写：如果从父类继承的方法（即函数）不能满足子类的需求，可以对其进行改写，该过程叫做方法的覆盖，也称作方法的重写。</li>
+<li>实例化：创建一个类的具体对象的过程，类似于c语言中定义变量的过程。</li>
+<li>实例：根据类定义的抽象模型创建出来的具体对象。</li>
+<li>数据成员：类变量或者实例变量用于处理类及其实例对象的相关的数据。</li>
+<li>继承：即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。</li>
+</ol>
+</li>
+<li><p>实例解释</p>
+<ul>
+<li><p>问题：在我们定义一个关于“人”的个人信息的类</p>
+</li>
+<li><p>分析：<br></p>
+<ol>
+<li>类属性：所有人都共有的且相同的信息如：国籍 </li>
+<li>实例属性：所有人都共有但不相同的信息如：姓名、性别、年龄</li>
+<li>方法：用来打印出每个人信息的函数</li>
+<li>实例化：用该类去定义一个具体的人</li>
+<li>实例：用该类定义的这个具体的人就是一个实例</li>
+<li>数据成员：初始化实例对象所需要的参数，即传入__init__()函数中的参数</li>
+<li>继承：如果某一个人还具有其他额外的个人信息可通过继承“人”类来具有“人”类的所有方法属性，同时可进行额外扩展</li>
+<li>方法重写：如果从基类“人”类中继承来的方法不能满足需求可对其进行改写<blockquote>
+<p>类属性和实例属性在类外和类内的调用：<br><br>类内：1.类属性：直接使用  2.实例属性：self.实例属性名<br><br>类外：1.类属性：<strong>类名.类属性名</strong> 2.实例属性：**实例名.实例属性名</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>实现</p>
+<blockquote>
+<p>在Python中，类通过 class 关键字定义，类名通用习惯为首字母大写，Python3中类基本都会继承于object类，当然也可以不继承object类；两者区别不大，但没有继承于object类使用多继承时可能会出现问题。</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Person(object):       #object是继承的基类</span><br><span class="line">    address = &quot;国家&quot;        #类属性</span><br><span class="line">    </span><br><span class="line">#类中的函数与一般函数的唯一区别是：第一个参数要加self(也可以是其他的名称，但一般统一用self)，self 代表类的实例，是通过类创建的实例！</span><br><span class="line"></span><br><span class="line">#__init__()函数中的name，sex，age都是数据成员</span><br><span class="line"></span><br><span class="line">    def __init__(self,name，sex，age):</span><br><span class="line">        self.name = name    #实例属性</span><br><span class="line">        self.sex = sex      #实例属性</span><br><span class="line">        self.age = age      #实例属性</span><br><span class="line"></span><br><span class="line">    def print_information(self):  #该类定义的方法</span><br><span class="line">        print(self.name,&#x27;性别&#x27;,self.sex,&#x27;年龄&#x27;,self.age)</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    小明 = Person(&#x27;小明&#x27;,&#x27;男&#x27;,19) </span><br><span class="line">    #实例化一个类对象，需要传入数据成员，因为当创建实例时，__init__() 方法会被自动调用为创建的实例增加实例属性。</span><br><span class="line">    小明.print_information() #调用类方法</span><br><span class="line">    Person.address = &#x27;xxxx&#x27;  #改变类对象的值</span><br><span class="line"></span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>关于<code>if __name__ == &#39;__main__&#39;:</code>用途的解释:</strong><br></p>
+<ul>
+<li>一个python文件通常有两种使用方法，1.是作为脚本直接执行，2. import 到其他的 python 脚本中被调用（模块重用）执行。</li>
+<li>因此 if <strong>name</strong> == ‘main’: 的作用就是控制这两种情况执行代码的过程，在 if <strong>name</strong> == ‘main’: 下的代码只有在第一种情况下（即文件作为脚本直接执行）才会被执行，而 import 到其他脚本中是不会被执行的。<blockquote>
+<p>通俗来将就是在该行代码下的代码只有在当前文件作为主文件（类似与c语言中的main）时才会被执行，如果该文件作为模块被其他文件引用了，那么在其他文件中调用该文件时，这些代码时不会被执行滴！！！</p>
+</blockquote>
+</li>
+<li>因为我们通常会在单独文件中写一些测试代码，这样通过该方法就可以避免作为模块时测试代码被执行的尴尬场面。。。</li>
+</ul>
+</li>
+</ul>
+<h2 id="进阶知识"><a href="#进阶知识" class="headerlink" title="进阶知识"></a>进阶知识</h2><ol>
+<li><p>私有方法、属性的限制：<br></p>
+<ul>
+<li>通过在方法、属性前加双下划线<code>__</code>来实现，此时它们只能在类内部调用，在类外部只能通过特殊机制调用，但我们不建议这么做，毕竟这样会违背我们将其定义为私有属性的初衷！<blockquote>
+<p>特殊机制（提一嘴）：可以通过将方法/属性写成 _类名__xx(xx为属性/方法名)来调用<br><br>如定义： __address = ‘国家’  调用：Person._Person__adderss<br><br>定义： __print_information()   调用：小明._Person__print_information()</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>Python类中的@classmethod、@staticmethod 装饰方法</p>
+<ul>
+<li>共同点：二者在使用时都不需要去实例化对象，可以直接通过类名来访问</li>
+<li>不同点：@classmethod 用来修饰方法。使用在实例化前与类进行交互，但不和其实例进行交互的函数方法上。<br></li>
+</ul>
+<p> @staticmethod 用来修饰类的静态方法。使用在有些与类相关函数，但不使用该类或该类的实例。如更改环境变量、修改其他类的属性等。<br></p>
+<p> 两者最明显的区别，classmethod 必须使用类的对象作为第一个参数，而staticmethod则可以不传递任何参数</p>
+</li>
+</ol>
+<blockquote>
+<p>一句话：@staticmethod 修饰的方法是放在类外的函数，我们为了方便将他移动到了类里面，它对类的运行无影响</p>
+</blockquote>
+<ul>
+<li>实例：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Date(object):</span><br><span class="line">   day = 0</span><br><span class="line">   month = 0</span><br><span class="line">   year = 0</span><br><span class="line"></span><br><span class="line">   def __init__(self, year=0, month=0, day=0):</span><br><span class="line">       self.day = day</span><br><span class="line">       self.month = month</span><br><span class="line">       self.year = year</span><br><span class="line"></span><br><span class="line">   @classmethod</span><br><span class="line">   def from_string(cls, date_as_string):</span><br><span class="line">       year, month, day = date_as_string.split(&#x27;-&#x27;)</span><br><span class="line">       date = cls(year, month, day)</span><br><span class="line">       return date</span><br><span class="line"></span><br><span class="line">   @staticmethod</span><br><span class="line">   def is_date_valid(date_as_string):</span><br><span class="line">       &quot;&quot;&quot;</span><br><span class="line">      用来校验日期的格式是否正确</span><br><span class="line">       &quot;&quot;&quot;</span><br><span class="line">       year, month, day = date_as_string.split(&#x27;-&#x27;)</span><br><span class="line">       return int(year) &lt;= 3999 and int(month) &lt;= 12 and int(day) &lt;= 31</span><br><span class="line"></span><br><span class="line">date1 = Date.from_string(&#x27;2012-05-10&#x27;)</span><br><span class="line">print(date1.year, date1.month, date1.day)</span><br><span class="line">is_date = Date.is_date_valid(&#x27;2012-09-18&#x27;) # 格式正确 返回True</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：@staticmethod修饰方法 is_date_valid(date_as_string)中无实例化参数self或者cls；而@classmethod修饰的方法中有from_string(cls, date_as_string) 类参数cls。</p>
+</blockquote>
+</li>
+</ul>
+<ol start="3">
+<li>@property 将类方法转换为只读属性（常用）</li>
+</ol>
+<blockquote>
+<p>使用 property 的最简单的方法是将它作为装饰器来使用。这可以让你将一个类方法转变成一个类属性。</p>
+</blockquote>
+<ul>
+<li>示例：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Circle(object):</span><br><span class="line">__pi = 3.14</span><br><span class="line"></span><br><span class="line">def __init__(self, r):</span><br><span class="line">    self.r = r</span><br><span class="line"></span><br><span class="line">@property</span><br><span class="line">def pi(self):</span><br><span class="line">    return self.__pi</span><br><span class="line"></span><br><span class="line">circle1 = Circle(2)</span><br><span class="line">print(circle1.pi)</span><br><span class="line">circle1.pi=3.14159  # 出现AttributeError异常</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面示例装饰了pi方法，创建实例后我们可以使用circle1.pi 自己获取方法的返回值，而且他只能读不能修改。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><ol>
+<li><p>继承的实现（继承最主要用处是提高代码的重用）</p>
+<ul>
+<li>实现</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Animal(object): #父类：动物类--继承基类object</span><br><span class="line">    def __init__(self,name,age):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    def call(self):</span><br><span class="line">        print(selc.name,&#x27;会叫&#x27;)</span><br><span class="line"></span><br><span class="line">#定义子类喵喵类，继承自动物类,但多了属性性别</span><br><span class="line">class Cat(Animal):</span><br><span class="line">    def __init__(self,name,sex,age):</span><br><span class="line">        super(Cat,self).__init__(name,age)</span><br><span class="line">        self.sex = sex</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.<code>super(子类名,self).__init__(基类数据成员，不用加self)</code>在派生类初始化的时候要加上，相当重要，否则，继承自 Animal的 Cat子类将没有 name和age两个属性。<br></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>2.函数super(Cat, self)将返回当前类继承的父类，即 Animal，然后调用__init__()方法，注意self参数已在super()中传入，在__init__()中将隐式传递，不能再写出self。</p>
+</blockquote>
+<ol start="2">
+<li>子类方法的重构</li>
+</ol>
+<ul>
+<li>类方法的调用顺序，当我们在子类中重构父类的方法后，Cat子类的实例先会在自己的类 Cat 中查找该方法，当找不到该方法时才会去父类 Animal 中查找对应的方法。<br></li>
+</ul>
+<ul>
+<li><p><strong>所以对于需要重构的父类方法，我们只需要在子类中重新定义即可（函数名相同即可），然后在子类实例化时会自动覆盖！！</strong></p>
+</li>
+<li><p>示例：</p>
+   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Cat(Animal):</span><br><span class="line">    省略</span><br><span class="line"></span><br><span class="line">    def call(self):</span><br><span class="line">        printf(self.name,&#x27;会喵喵叫&#x27;)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li>类具有继承关系，并且子类类型可以向上转型看做父类类型，如果我们从 Animal 派生出 Cat和 Dog，并都写了一个 call() 方法，如下示例：  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Animal(object):  </span><br><span class="line">def __init__(self, name, age):</span><br><span class="line">    self.name = name</span><br><span class="line">    self.age = age</span><br><span class="line">def call(self):</span><br><span class="line">    print(self.name, &#x27;会叫&#x27;)</span><br><span class="line"></span><br><span class="line">class Cat(Animal):</span><br><span class="line">def __init__(self, name, age, sex):</span><br><span class="line">    super(Cat, self).__init__(name, age)</span><br><span class="line">    self.sex = sex</span><br><span class="line"></span><br><span class="line">def call(self):</span><br><span class="line">    print(self.name, &#x27;会“喵喵”叫&#x27;)</span><br><span class="line"></span><br><span class="line">class Dog(Animal):</span><br><span class="line">def __init__(self, name, age, sex):</span><br><span class="line">    super(Dog, self).__init__(name, age)</span><br><span class="line">    self.sex = sex</span><br><span class="line">def call(self):</span><br><span class="line">    print(self.name, &#x27;会“汪汪”叫&#x27;)</span><br></pre></td></tr></table></figure>
+我们定义一个 do 函数，接收一个变量 ‘all’,如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def do(all):</span><br><span class="line">all.call()</span><br><span class="line"></span><br><span class="line">A = Animal(&#x27;小黑&#x27;,4)</span><br><span class="line">C = Cat(&#x27;喵喵&#x27;, 2, &#x27;男&#x27;)</span><br><span class="line">D = Dog(&#x27;旺财&#x27;, 5, &#x27;女&#x27;)</span><br><span class="line"></span><br><span class="line">for x in (A,C,D):</span><br><span class="line">do(x)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">小黑 会叫</span><br><span class="line">喵喵 会“喵喵”叫</span><br><span class="line">旺财 会“汪汪”叫</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><p>多态解释</p>
+<blockquote>
+<p>这种行为称为多态。也就是说，方法调用将作用在 all 的实际类型上。C 是 Cat 类型，它实际上拥有自己的 call() 方法以及从 Animal 继承的 call 方法，但调用 C .call() 总是先查找它自身的定义，如果没有定义，则顺着继承链向上查找，直到在某个父类中找到为止。</p>
+</blockquote>
+<blockquote>
+<p>传递给函数 do(all) 的参数 all 不一定是 Animal 或 Animal 的子类型。任何数据类型的实例都可以，只要它有一个 call() 的方法即可。其他类不继承于 Animal，具备 call 方法也可以使用 do 函数。这就是动态语言，动态语言调用实例方法，不检查类型，只要方法存在，参数正确，就可以调用。</p>
+</blockquote>
+</li>
+</ul>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E7%B1%BB-calss"><span class="toc-text">Python学习之-类(calss)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E7%9F%A5%E8%AF%86"><span class="toc-text">基础概念知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86"><span class="toc-text">进阶知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="toc-text">类的继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2022/03/17/python-class/">http://example.com/2022/03/17/python-class/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a></li></ul>
+
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2022/04/16/python-tkinter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          python_tkinter
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/17/CodeExperience/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">CodeExperience</div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/31/matlab-experience/">matlab_experience</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/13/win11/">win11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/28/python-%E6%8A%80%E5%B7%A7/">python-技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/16/python-tkinter/">python_tkinter</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/python-class/">python_class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">环境搭建、经验</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">系统安装</a> <a href="/tags/%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/" style="font-size: 16.67px;">编码工具</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">编程经验</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">编程语言</a>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年08月</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" rel="tag">环境搭建、经验</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/" rel="tag">编码工具</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" rel="tag">编程经验</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://bit.baidu.com/index">百度技术培训中心</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2024 dongzai.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

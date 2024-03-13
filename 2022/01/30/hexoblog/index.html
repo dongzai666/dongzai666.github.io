@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>github+hexo 个人博客搭建 | 小东仔的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="小东仔的个人博客">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="小东仔的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小东仔的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-hexoblog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      github+hexo 个人博客搭建
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-01-30T03:14:50.000Z" itemprop="datePublished">2022年01月30日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2022/01/30/hexoblog/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo静态网页博客搭建及实现多平台同步"><a href="#Hexo静态网页博客搭建及实现多平台同步" class="headerlink" title="Hexo静态网页博客搭建及实现多平台同步"></a>Hexo静态网页博客搭建及实现多平台同步</h1><blockquote>
+<p>该网站基于市面上流行的NodeJs框架下的Hexo，托管于github，实现了一个个人博客的基本功能，本文主要讲解在<strong>linux</strong>平台下搭建hexo环境的主要步骤以及在不同平台（如想同时在windows、linux下发布、管理博客内容的工作场景）同步内容的解决方案！</p>
+</blockquote>
+<blockquote>
+<p>前置内容</p>
+<ul>
+<li>linux基本命令的使用</li>
+<li>Git命令行的使用及功能</li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="博客网站搭建–环境配置"><a href="#博客网站搭建–环境配置" class="headerlink" title="博客网站搭建–环境配置"></a>博客网站搭建–环境配置</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/108094987">参考链接1</a></p>
+<blockquote>
+<p>在搭建Hexo环境前需要配置本地环境，主要有：</p>
+</blockquote>
+<ul>
+<li>Nodejs  ：需要注意其版本，建议安装至最新版本，否则会出现报错<ul>
+<li>命令行安装： <code>sudo apt install nodejs</code>,ubuntu默认安装版本8.10，其他安装方法可自行百度</li>
+<li>版本查询：<code>Node -v</code></li>
+<li>版本更新：通过安装Node工具包<strong>n</strong>来实现<ul>
+<li>安装n <code>sudo npm install n -g</code></li>
+<li>安装最新稳定nodejs <code>sudo n stable</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>npm  ：<code>sudo apt install npm</code></li>
+<li>git  : <code>sudo apt install git</code></li>
+</ul>
+<h2 id="博客网站搭建–实现步骤"><a href="#博客网站搭建–实现步骤" class="headerlink" title="博客网站搭建–实现步骤"></a>博客网站搭建–实现步骤</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/115153910">参考链接2</a></p>
+<ol>
+<li><p>当前期需要环境准备好以后，配置hexo环境就相当简单了，使用命令： <code>sudo nmp install hexo-cli -g</code></p>
+</li>
+<li><p>然后在本地新建一个文件夹，通过<code>hexo init 本地文件夹路径</code>在指定文件夹生成文件体系，需要我们自定义的文件夹如下：</p>
+<ul>
+<li>source/_posts 文件夹下存放.md 格式的博客文章</li>
+<li>themes 文件夹下存放主题</li>
+<li>可以去github克隆喜欢的主题到该目录下，然后通过修改 _config.yaml 中 theme 字段为克隆主题生效！</li>
+</ul>
+</li>
+<li><p>接下来就是将我们的网站挂载到github仓库上，这样任何人就能通过我们的网址来访问我们的网站了</p>
+<ul>
+<li>首先创建名为<strong>xxx.github.io</strong>的github仓库，以后就可以通过 xxx.github.io 的网址来访问了</li>
+<li>通过如下命令来关联本地markdown文件与远端github仓库<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<li>打开配置文件_config.yml 配置git<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/xxx/xxxx.github.io.git</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>可以给自己的博客加上评论功能，这样会高逼格一点</p>
+<ul>
+<li>可以在畅言网站上免费注册z-blog功能，获取到<strong>appid</strong> 和 <strong>appsecret</strong>进入你的themes/对应主题,打开_config.yml，定位到 changyan ，把 enable 改为 true。</li>
+<li>然后是修改如下<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">changyan:</span><br><span class="line">enable: true</span><br><span class="line">appid: 这里写上你的畅言在appid</span><br><span class="line">appkey: 这里写上你的畅言在appkey</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>最后是通过以下命令实现本地刷新并上传到远程仓库</p>
+<ul>
+<li>网站修改后刷新生效命令<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清除本地原缓冲文件 </span><br><span class="line">hexo g      #生成新网站，刷新  generate</span><br><span class="line">hexo s      #启动服务器 server</span><br></pre></td></tr></table></figure></li>
+<li>部署网站到远端</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #deploy部署</span><br></pre></td></tr></table></figure>
+<h2 id="博客网站搭建–部署报错"><a href="#博客网站搭建–部署报错" class="headerlink" title="博客网站搭建–部署报错"></a>博客网站搭建–部署报错</h2></li>
+</ol>
+<ul>
+<li>报错信息如下：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">penSSL SSL_read: Connection was reset, errno 10054</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (F:\Blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:390:28)</span><br><span class="line">      at ChildProcess.cp.emit (F:\Blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure></li>
+<li><em>在最后一部<code>hexo d</code>时出现以上的错误，不要怀疑，是GitHub的服务器出毛病了！！！多尝试几次就欧克。</em>*</li>
+</ul>
+<hr>
+<h2 id="博客网站搭建–多端同步"><a href="#博客网站搭建–多端同步" class="headerlink" title="博客网站搭建–多端同步"></a>博客网站搭建–多端同步</h2><blockquote>
+<p>解决方案，使用GitHub的分支！在博客对应的仓库中新建一个分支。一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页,通过在不同平台拉取实现资源文件同步。</p>
+</blockquote>
+<ul>
+<li>分支master：静态网页资源</li>
+<li>分支sync：网站原始文件</li>
+</ul>
+<ol>
+<li>在github网页端创建基于master的分支sync(此时sync的文件同master完全一致)，将本地生成网站原始文件转移至其他文件夹，防止待会pull时被覆盖</li>
+<li>Git操作</li>
+</ol>
+<ul>
+<li> git init 初始化文件夹，生成.git文件</li>
+<li> git remote add origin <a target="_blank" rel="noopener" href="https://github.com/dongzai666/dongzai666.github.io.git">https://github.com/dongzai666/dongzai666.github.io.git</a>  链接远程仓库</li>
+<li> git pull origin sync:master 将sync分支内容拉下来，与本地建立链接，然后删除除了.git以外的所有文件</li>
+</ul>
+<ol start="3">
+<li>将转移的网站原始文件复制回来，修改.gitignore文件，避免上传一些不需要的文件，内容如下：</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传</p>
+</blockquote>
+<ol start="4">
+<li><p>通过<code>git push origin master:sync -f</code><br> <strong>强制覆盖远端sync分支的内容</strong></p>
+<p> 此时就实现了远端master分支存放生成的静态网页，sync分支用来存放网站原始文件的目的！！！</p>
+</li>
+<li><p>在新设备上将该仓库sync分支克隆下来 <code>git clone -b sync      https://github.com/dongzai666/dongzai666.github.io.git  Blog</code>    </p>
+</li>
+<li><p>此时新设备不需要再<code>hexo init</code>了，此时只需<code>npm install</code>即可安装所需要的环境，同时别忘了关联本地markdown文件和github仓库，命令：<code>npm install hexo-deployer-git --save</code></p>
+</li>
+</ol>
+<p>7.到这一步后 其他博客更新、管理操作同原来一致，只需要在每次修改博客内容后将源文件及时同步到仓库中即可！其他设备只需要在编辑前进行pull操作～</p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%AE%9E%E7%8E%B0%E5%A4%9A%E5%B9%B3%E5%8F%B0%E5%90%8C%E6%AD%A5"><span class="toc-text">Hexo静态网页博客搭建及实现多平台同步</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">博客网站搭建–环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="toc-text">博客网站搭建–实现步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E9%83%A8%E7%BD%B2%E6%8A%A5%E9%94%99"><span class="toc-text">博客网站搭建–部署报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E2%80%93%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5"><span class="toc-text">博客网站搭建–多端同步</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2022/01/30/hexoblog/">http://example.com/2022/01/30/hexoblog/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" rel="tag">环境搭建、经验</a></li></ul>
+
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+    <a href="/2022/02/12/vim-operate/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">newer</strong>
+      <div class="article-nav-title">
+        
+          vim_operate
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/31/matlab-experience/">matlab_experience</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/13/win11/">win11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/28/python-%E6%8A%80%E5%B7%A7/">python-技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/16/python-tkinter/">python_tkinter</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/python-class/">python_class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">环境搭建、经验</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">系统安装</a> <a href="/tags/%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/" style="font-size: 16.67px;">编码工具</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">编程经验</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">编程语言</a>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年08月</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" rel="tag">环境搭建、经验</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/" rel="tag">编码工具</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" rel="tag">编程经验</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://bit.baidu.com/index">百度技术培训中心</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2024 dongzai.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>matlab_experience | 小东仔的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <meta name="description" content="小东仔的个人博客">
+  
+  
+  
+    <link rel="alternate" href="/atom.xml" title="小东仔的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="/localshare/css/share.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">小东仔的个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/."><i class="fa fa-home"></i> Home</a>
+        
+          <a class="main-nav-link" href="/archives/"><i class="fa fa-archive"></i> Archive</a>
+        
+          <a class="main-nav-link" href="/about/"><i class="fa fa-user"></i> About</a>
+        
+          <a class="main-nav-link" href="/atom.xml"><i class="fa fa-rss"></i> RSS</a>
+        
+      </nav>
+    </div>
+    <div id="search-form">
+      <div id="result-mask" class="hide"></div>
+      <label><input id="search-key" type="text" autocomplete="off" placeholder="search"></label>
+      <div id="result-wrap" class="hide">
+        <div id="search-result"></div>
+      </div>
+      <div class="hide">
+        <template id="search-tpl">
+          <div class="item">
+            <a href="/{path}" title="{title}">
+              <div class="title">{title}</div>
+              <div class="time">{date}</div>
+              <div class="tags">{tags}</div>
+            </a>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-matlab-experience" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      matlab_experience
+    </h1>
+  
+
+
+      </header>
+    
+    <div class="article-meta">
+      
+      <span class="article-date">
+  <i class="fa fa-date"></i>
+  <time class="dt-published" datetime="2022-08-31T00:23:51.000Z" itemprop="datePublished">2022年08月31日</time>
+</span>
+      
+      
+        <span class="article-views">
+  <i class="fa fa-views"></i>
+  <i id="busuanzi_container_page_pv">
+      <i id="busuanzi_value_page_pv"></i>
+  </i>
+</span>
+
+      
+      
+<a href="/2022/08/31/matlab-experience/#comments" class="article-comment-link">
+  
+    
+    
+    
+    
+    
+  
+  <i class="fa fa-commt"></i>
+  Guestbook
+</a>
+
+
+    </div>
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Matlab语言基础"><a href="#Matlab语言基础" class="headerlink" title="Matlab语言基础"></a>Matlab语言基础</h1><ol>
+<li>语言命名规则<ul>
+<li>由一个字母引导，后面可以为其他字符</li>
+<li>区分大小写</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li><p>Matlab的保留常量</p>
+<ul>
+<li>eps,i,j,pi,inf(无穷),NaN(不定式),lastwarn,lasterr</li>
+</ul>
+</li>
+<li><p><strong>ans</strong>: 用于存储最近一次未赋值的运行结果</p>
+</li>
+<li><p><strong>vpa</strong>：变精度求值，vpa(A),vpa(A,n)</p>
+</li>
+<li><ul>
+<li>disp([‘xxxx ‘变量’ xx’]) 用于输出</li>
+<li>num2str(),str2num()  数字字符串转化</li>
+</ul>
+</li>
+<li><p>Matlab支持的其他数据结构</p>
+<ul>
+<li>字符串型数据，用单引号括起来</li>
+<li>多维数据：是矩阵的直接扩展，多个下标</li>
+<li>单元数据：将不同类型的数据集成到一个变量名下面，用{}表示</li>
+<li>结构体：A.b，引用也用A.b，不是A-&gt;b</li>
+<li>类与对象</li>
+</ul>
+</li>
+<li><p>Matlab的基本语句结构</p>
+<ul>
+<li>直接赋值语句<ul>
+<li>矩阵： A = [1,2,3;4,5,6;7,8,0] <blockquote>
+<p>1.矩阵写在一行，用方括号括在一起<br><br>  2.矩阵同行用空格或逗号隔开</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>注：1.<code>clear all</code>用于清除工作区中的变量<br>      2. <code>clc</code>清除命令行内容<br>      3. 语句末尾加<code>；</code>表示不输出内容，去掉分号表示输出内容</p>
+</blockquote>
+<ul>
+<li><p>函数调用语句</p>
+<ul>
+<li>[返回变量列表]=函数名（输入变量列表）</li>
+<li>[a,b,c] = myfun(d,e,f,g)</li>
+</ul>
+</li>
+<li><p>冒号表达式</p>
+<ul>
+<li>v=s1:s2:s3 :从s1到s3，以步距s2生成一系列数</li>
+</ul>
+</li>
+<li><p>Linspace(a,b,n):生成从a到b的n个等间距点</p>
+</li>
+<li><p>子矩阵提取</p>
+<ul>
+<li>格式：<code>B=A(v1,v2)</code><blockquote>
+<p>冒号在逗号前表示提取所有行，逗号后表示所有列(逗号前是行号，逗号后是列号)</p>
+</blockquote>
+</li>
+<li>注：1.提取矩阵所有奇数行和所有列：<code>B=A(1:2:end,:)</code></li>
+</ul>
+<ol start="2">
+<li>提取A矩阵的3，2，1行和2，3，4列构成矩阵：<code>B=A([3,2,1],[2,3,4,])</code></li>
+<li>A矩阵翻转:<code>B=A(:,end:-1:1)</code></li>
+</ol>
+</li>
+</ul>
+<ol start="8">
+<li><p>语言流程控制</p>
+<ul>
+<li>循环结构<ul>
+<li>for结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for i=V</span><br><span class="line">    循环结构体</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>i可以计数，也可以是向量，每次取一个值，循环次数为向量长度</p>
+</blockquote>
+</li>
+<li>while结构<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while(条件式)</span><br><span class="line">    循环结构体</span><br><span class="line">end</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>转移结构</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if(条件1)</span><br><span class="line">    语句组 1</span><br><span class="line">elseif(条件2)</span><br><span class="line">    语句组2</span><br><span class="line">else(条件3)</span><br><span class="line">    语句组n+1</span><br><span class="line">end</span><br></pre></td></tr></table></figure></li>
+<li><p>开关结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch 开关表达式</span><br><span class="line">case 表达式1</span><br><span class="line">    语句段1</span><br><span class="line">case &#123;表达式2，表达式3，表达式m&#125;</span><br><span class="line">    语句段2</span><br><span class="line">otherwise</span><br><span class="line">    语句段n</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>matlab 的开关与c语言有区别，可以有多个条件式，执行一个语句完成后自动结束，不需要break语句……</p>
+</blockquote>
+</li>
+<li><p>试探结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">try,语句段1,</span><br><span class="line">catch,语句段2,</span><br><span class="line">end</span><br></pre></td></tr></table></figure></li>
+<li><p>函数基本结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function [返回变量列表] = 函数名(输入变量列表)</span><br><span class="line">    注释说明语句段，由%引导</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>定义完的函数保存为同函数名的m文件，放置在Matlab的当前路径之下（或修改当前路径为m-函数文件所在路径），然后就和使用Matlab自带的函数一样，直接在命令窗口或程序代码中使用该函数就是调用它了。调用函数时，只需要知道函数是完成什么功能的，以及它的输入参数、输出参数。</p>
+</blockquote>
+<p>函数调用的一般格式为：</p>
+<p>[输出实参表]=函数名(输入实参表)</p>
+<ul>
+<li>varargin 就是一个输入 变量，它可以是任意个不定个数的输入参数。要求：第一，指明它用小写的字母表示；第二，在函数的参数列表中，varargin放在最后面。 当函数执行时，varargin就是一个1 * n 的cell数组</li>
+<li>varargout是一个元胞数组，用来存储输出参数。利用它的好处是输出参数的个数可变，可以根据情况改变输出参数的个数</li>
+</ul>
+</li>
+</ol>
+<p>13.inline函数，可以免去文件<br>    <code>函数名=inline(&#39;函数内容&#39;，自变量列表)</code><br>    * Matlab7.0<br>    <code>f=@(变量列表）函数内容</code></p>
+
+        
+            <div id="toc-article">
+                
+  <div class="widget-wrap" id="toc-wrap">
+    <h3 class="widget-title"><i class="fa fa-toc"></i> Contents</h3>
+    <div class="widget">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="toc-text">Matlab语言基础</span></a></li></ol>
+    </div>
+  </div>
+
+
+            </div>
+        
+        
+          <blockquote id="copyright">
+              <p>Original link: <a href="http://example.com/2022/08/31/matlab-experience/">http://example.com/2022/08/31/matlab-experience/</a></p>
+              <p>Copyright Notice: 转载请注明出处.</p>
+          </blockquote>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div class="article-tag-wrap">
+          
+
+          
+          
+    <div class="social-share">
+      <span>Share:</span>
+    </div>
+
+
+
+        </div>
+      
+      
+        
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/13/win11/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">older</strong>
+      <div class="article-nav-title">win11</div>
+    </a>
+  
+</nav>
+
+      
+      
+        
+
+
+
+
+
+
+
+      
+    </footer>
+  </div>
+</article>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-posts"></i> Recent</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/08/31/matlab-experience/">matlab_experience</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/13/win11/">win11</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/28/python-%E6%8A%80%E5%B7%A7/">python-技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/16/python-tkinter/">python_tkinter</a>
+          </li>
+        
+          <li>
+            <a href="/2022/03/17/python-class/">python_class</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">环境搭建、经验</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" style="font-size: 10px;">系统安装</a> <a href="/tags/%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/" style="font-size: 16.67px;">编码工具</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" style="font-size: 13.33px;">编程经验</a> <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" style="font-size: 20px;">编程语言</a>
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-archive"></i> Archive</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022年08月</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-tag"></i> Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E3%80%81%E7%BB%8F%E9%AA%8C/" rel="tag">环境搭建、经验</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="tag">系统安装</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81%E5%B7%A5%E5%85%B7/" rel="tag">编码工具</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" rel="tag">编程经验</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" rel="tag">编程语言</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><i class="fa fa-link"></i> Blogroll</h3>
+    <div class="widget">
+      <ul>
+      
+        <li>
+          <a target="_blank" rel="noopener" href="http://bit.baidu.com/index">百度技术培训中心</a>
+        </li>
+      
+      </ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <a id="totop" href="#top"></a>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p>
+        <a href="/sitemap.xml">Site Map</a>
+        <span> | </span><a href="/atom.xml">Subscribe to this site</a>
+        <span> | </span><a href="/about/">Contact the blogger</a>
+      </p>
+      
+        <p>
+          <i class="fa fa-visitors"></i>
+          <i id="busuanzi_container_site_uv"><i id="busuanzi_value_site_uv"></i></i>
+          ，
+          <i class="fa fa-views"></i>
+          <i id="busuanzi_container_site_pv"><i id="busuanzi_value_site_pv"></i></i>
+        </p>
+      
+      <p>
+        <span>Copyright &copy; 2024 dongzai.</span>
+        <span>Theme by <a href="https://github.com/chaooo/hexo-theme-BlueLake/" target="_blank">BlueLake.</a></span>
+        
+            <span>Count by <a href="http://busuanzi.ibruce.info/" target="_blank">busuanzi.</a></span>
+        
+        <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo.</a></span>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+<script src="/js/search.json.js"></script>
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+  
+<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  
+<script src="/localshare/js/social-share.js"></script>
+
+  
+<script src="/localshare/js/qrcode.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
